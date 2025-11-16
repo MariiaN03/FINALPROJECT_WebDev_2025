@@ -1,0 +1,341 @@
+/**MENU STYLE**/
+.menu {
+    position: fixed;
+    top: 0;
+
+    width: 100%;
+    height: 8vh;
+
+    background-color: #808080;
+    color: white;
+    padding: 10px;
+    z-index: 999;
+}
+
+.bookNow{
+    position: absolute;
+    right: 2.5%;
+    top: 25%; 
+
+    width: 9vw;
+    height: 5.5vh;
+
+    background-color: #362a27;
+    border-radius: 10px;
+
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bookNowText{
+    color: white;
+    font-size: 1.2vw;
+    text-decoration: none;
+}
+.bookNow:hover{
+    background-color: #5c4a47;
+    cursor: pointer;
+}
+
+.menuIMG {
+    position: absolute;
+    height: 11vh;
+    top: 0;
+    margin-left: 45%;
+    border-radius: 50%;
+}
+.menuTitle{
+    color: rgb(58, 44, 35);
+
+    position: absolute;
+    top: 35%;
+    left: 43%;
+}
+
+.openMenu{
+    position: absolute;
+    left: 1.5%;
+    top: 25%;
+
+    width: 3vw;
+    height: 5.5vh;
+
+    background-color: #bababa00;
+}
+.line1, .line2, .line3{
+    width: 100%;
+    height: 1.35vh;
+
+    border-radius: 7px;
+
+    background-color: rgb(57, 39, 39);
+}
+.line2, .line3{
+    margin-top: 0.8vh;
+}
+.openMenu:hover .line2 {
+    transition: transform 0.3s ease;
+    transform: translateX(0.7vw); 
+}
+
+/**INSIDE Menu**/
+.menuOverlay{
+    position: fixed;
+    top: 0;
+    left: 25%;
+
+    width: 75%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.5);
+
+    z-index: 1000;
+}
+
+.closeBtn {
+    width: 30px;
+    height: 30px;
+
+    position: absolute;
+    cursor: pointer;
+
+    top: 2vh;
+    left: 3%;
+}
+
+.line {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 3px;
+    background: #3a2a2a;
+    border-radius: 2px;
+    transform-origin: center;
+}
+.line.a {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.line.b {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.menuOptions {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 25%;
+    height: 100%;
+
+    background-color: #7d5858;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5vh;
+
+    z-index: 1001;
+
+    opacity: 0;
+    pointer-events: none;          
+    transition: opacity 0.3s ease;
+}
+.menuOptions.Show{
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.3s ease;
+}
+
+.menuIMGoptions {
+    width: 15vh;
+    height: 15vh;
+    border-radius: 50%;
+    margin-top: 3vh;
+}
+.menuTitleOptions{
+    margin-top: -5vh;
+
+    color: turquoise;
+}
+
+.menuLinks{
+    background-color: rgba(137, 43, 226, 0);
+
+    margin-top: 5vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.menuLink{
+    text-align: center;
+    margin-top: 3vh;
+
+    text-decoration: none;
+    color: white;
+    font-size: 1.2vw;
+}
+.menuLink:hover{
+    color: yellow;
+    cursor: pointer;
+}
+.menuLinkHR{
+    width: 45%;
+    margin-top: 5vh;
+    margin-bottom: 2.7vh;
+    border: 0.5px solid white;
+}
+
+.bookNowMenu{
+    position: relative;
+
+    top: 28vh;
+
+    width: 12vw;
+    height: 6vh;
+
+    background-color: #362a27;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bookNowTextMenu{
+    color: white;
+    font-size: 1.2vw;
+    text-decoration: none;
+}
+.bookNowMenu:hover{
+    background-color: #5c4a47;
+    cursor: pointer;
+}
+
+
+/**SMALL SCREEN**/
+@media screen and (max-width: 768px) {
+    /**Main Bar**/
+    .bookNow{
+        position: fixed;
+        top: 93%;
+        right: 2%;
+        left: 2%;
+
+        width: auto;
+    }
+    .bookNowText{
+        font-size: 4vw;
+    }
+
+    .menuIMG {
+        position: absolute;
+        margin-left: 5%;
+    }
+    .menuTitle{
+        position: absolute;
+        top: 35%;
+        left: 2%;
+        font-size: 4vw;
+    }
+
+    .openMenu{
+        position: absolute;
+        right: 5%;
+        left: auto;
+
+        width: 8%;
+
+        background-color: rgba(0, 255, 255, 0);
+    }
+    .openMenu:hover .line2 {
+        transition: transform 0.3s ease;
+        transform: translateX(-1vw); 
+    }
+
+    /**Inside Menu**/
+    .menuOptions {
+        left: auto;
+        right: 0;
+        width: 60%;
+    }
+    .menuOverlay{
+        right: 60%;
+        left: auto;
+        width: 40%;
+    }
+
+    .menuLink{
+        font-size: 4vw;
+    }
+
+    .bookNowMenu{
+        width: 35vw;
+        height: 6vh;
+    }
+    .bookNowTextMenu{
+        font-size: 3.7vw;
+    }
+}
+
+@media screen and (max-height: 500px) and (max-width: 768px) {
+    .menuTitle{
+        position: absolute;
+        top: 35%;
+        left: 2%;
+        font-size: 4vw;
+    }
+}
+
+@media screen and (max-height: 400px) and (max-width: 768px) {
+    .menuTitle{
+        position: absolute;
+        top: 15%;
+        left: 2%;
+        font-size: 4vw;
+    }
+}
+
+
+@media screen and (max-height: 200px) and (max-width: 768px) {
+    .bookNow{
+        height: 20%;
+        top: 75%;
+    }
+    .menu {
+        height: 30%;
+
+    }
+    .menuTitle{
+        position: absolute;
+        top: 35%;
+        left: 2%;
+        font-size: 4vw;
+    }
+    .openMenu{
+        visibility: hidden;
+    }
+    .menuIMG {
+        height: 100%;
+    }
+}
+@media screen and (max-height: 70px) and (max-width: 768px) {
+    .bookNow{
+        position: fixed;
+        top: 0;
+        height: 100%;
+    }
+    .menu {
+        height: 100%;
+        background-color: rgba(240, 248, 255, 0);
+    }
+    .menuTitle{
+        visibility: hidden;
+    }
+    .menuIMG {
+        visibility: hidden;
+    }
+}
