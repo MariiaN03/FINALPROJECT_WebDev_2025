@@ -1,46 +1,18 @@
-// ============================================
-// IMAGINARY INNS - MENU FUNCTIONALITY
-// ============================================
+const openMenu = document.getElementById('openMenuID');
+const closeMenu = document.getElementById('closeBtnID');
+const closeOutside = document.getElementById('menuOverlayID');
+const block = document.getElementById('menuOptionsID');
 
-document.addEventListener('DOMContentLoaded', function() {
-    const openMenuBtn = document.getElementById('openMenuID');
-    const closeMenuBtn = document.getElementById('closeBtnID');
-    const menuOptions = document.getElementById('menuOptionsID');
-    const menuOverlay = document.getElementById('menuOverlayID');
-    const menuLinks = document.querySelectorAll('.menuLink');
+openMenu.addEventListener('click', () => {
+    block.classList.toggle('Show');
+    document.body.style.overflow = 'hidden';
+});
+closeOutside.addEventListener('click', () => {
+    block.classList.remove('Show');
+    document.body.style.overflow = 'auto';
+});
 
-    // Open menu
-    if (openMenuBtn) {
-        openMenuBtn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            menuOptions.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-    }
-
-    // Close menu
-    function closeMenu() {
-        menuOptions.classList.remove('active');
-        document.body.style.overflow = 'auto';
-    }
-
-    if (closeMenuBtn) {
-        closeMenuBtn.addEventListener('click', closeMenu);
-    }
-
-    if (menuOverlay) {
-        menuOverlay.addEventListener('click', closeMenu);
-    }
-
-    // Close menu when clicking on a link
-    menuLinks.forEach(link => {
-        link.addEventListener('click', closeMenu);
-    });
-
-    // Close menu on escape key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-            closeMenu();
-        }
-    });
+closeMenu.addEventListener('click', () => {
+    block.classList.remove('Show');
+    document.body.style.overflow = 'auto';
 });
