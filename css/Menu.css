@@ -1,0 +1,293 @@
+/* ============================================
+   IMAGINARY INNS - MENU STYLES
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #1a1a2e;
+    --secondary-color: #d4a574;
+    --accent-color: #16213e;
+    --light-bg: #f5f5f5;
+    --text-dark: #333;
+    --text-light: #666;
+    --white: #ffffff;
+    --border-color: #ddd;
+}
+
+/* ============================================
+   MENU BAR
+   ============================================ */
+
+.menu {
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.menuIMG {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.menuIMG:hover {
+    transform: scale(1.05);
+}
+
+.menuTitle {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+    flex-grow: 1;
+    margin-left: 1rem;
+    letter-spacing: 2px;
+}
+
+.bookNow {
+    display: flex;
+    align-items: center;
+}
+
+.bookNowText {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.bookNowText:hover {
+    background-color: #c49560;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ============================================
+   HAMBURGER MENU
+   ============================================ */
+
+.openMenu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+    margin-left: 2rem;
+}
+
+.line1,
+.line2,
+.line3 {
+    width: 25px;
+    height: 3px;
+    background-color: var(--secondary-color);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.openMenu:hover .line1,
+.openMenu:hover .line2,
+.openMenu:hover .line3 {
+    background-color: var(--white);
+}
+
+/* ============================================
+   MENU OPTIONS (SIDEBAR)
+   ============================================ */
+
+.menuOptions {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+}
+
+.menuOptions.active {
+    display: flex;
+    flex-direction: column;
+}
+
+.menuOverlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.closeBtn {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 210;
+}
+
+.menuOptions.active .closeBtn {
+    display: flex;
+}
+
+.closeBtn .line {
+    width: 25px;
+    height: 3px;
+    background-color: var(--white);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.closeBtn .line.a {
+    transform: rotate(45deg) translate(10px, 10px);
+}
+
+.closeBtn .line.b {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Sidebar menu content */
+.menuOptions > div,
+.menuOptions > a,
+.menuOptions > h2 {
+    position: relative;
+    z-index: 211;
+}
+
+.menuIMGoptions {
+    width: 60px;
+    height: 60px;
+    margin: 2rem 2rem 0 2rem;
+    cursor: pointer;
+}
+
+.menuTitleOptions {
+    color: var(--secondary-color);
+    font-size: 1.8rem;
+    margin: 1rem 2rem;
+    letter-spacing: 2px;
+}
+
+.menuLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 2rem 2rem;
+    flex-grow: 1;
+}
+
+.menuLink {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 0.5rem 0;
+}
+
+.menuLink:hover {
+    color: var(--secondary-color);
+    padding-left: 1rem;
+}
+
+.menuLinkHR {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 0.5rem 0;
+}
+
+.bookNowMenu {
+    margin: 2rem;
+}
+
+.bookNowTextMenu {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    display: inline-block;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    width: 100%;
+    text-align: center;
+}
+
+.bookNowTextMenu:hover {
+    background-color: #c49560;
+    transform: translateY(-2px);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+    .menu {
+        padding: 1rem;
+    }
+
+    .menuTitle {
+        font-size: 1.2rem;
+        margin-left: 0.5rem;
+    }
+
+    .bookNow {
+        display: none;
+    }
+
+    .openMenu {
+        display: flex;
+    }
+
+    .menuOptions {
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    }
+}
+
+@media (max-width: 480px) {
+    .menu {
+        padding: 0.8rem;
+    }
+
+    .menuIMG {
+        width: 40px;
+        height: 40px;
+    }
+
+    .menuTitle {
+        font-size: 1rem;
+        margin-left: 0.3rem;
+    }
+
+    .menuLinks {
+        gap: 1rem;
+    }
+
+    .menuLink {
+        font-size: 1rem;
+    }
+
+    .closeBtn {
+        top: 1.5rem;
+        right: 1.5rem;
+    }
+}
