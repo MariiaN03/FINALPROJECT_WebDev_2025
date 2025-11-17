@@ -6,8 +6,78 @@ body {
 }
 
 
+/*** Background Image Section ***/
+.backgroundIMG{
+    position: relative;
+
+    width: 100%;
+    height: 100vh;  
+
+    overflow: hidden;
+}
+
+.PhotoHolderID {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+}
+
+.backgroundPhoto{
+    position: absolute; 
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    inset: 0;
+
+    opacity: 0;
+    transition: opacity 1.5s ease;
+    transform: scale(1);
+}
+.backgroundPhoto.active {
+    opacity: 1;
+    animation: zoom 8s linear infinite;
+}
+@keyframes zoom {
+    0%   { transform: scale(1); }
+    100% { transform: scale(1.1); } 
+}
 
 
+.PhotoHolderOverlay{
+    background-color: rgba(60, 60, 60, 0.44);
 
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    z-index: 5;
+}
+
+/*** Text Section on Background ***/
+.slogan {
+    position: absolute;
+    top: 92vh;
+    left: 2.5vw;
+
+    color: white;
+    font-size: 1.5rem;
+    font-weight: lighter;
+    text-decoration: none;
+
+    z-index: 10;
+}
+.arrow-down{
+    position: absolute;
+    top: 92vh;
+    left: 50%;
+
+    z-index: 10;
+}
+.arrow-down img{
+    width: 5vh;
+}
 
 
