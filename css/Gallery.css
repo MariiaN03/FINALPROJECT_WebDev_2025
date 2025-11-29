@@ -1,6 +1,6 @@
 /* ============================================
-   IMAGINARY INNS - GALLERY PAGE STYLES
-   ============================================ */
+    hotel name - GALLERY PAGE STYLES
+    ============================================ */
 
 * {
     margin: 0;
@@ -38,8 +38,9 @@ body {
    ============================================ */
 
 .page-title {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
-    color: var(--white);
+    /* removed dark gradient to eliminate blue strip */
+    background: transparent;
+    color: var(--text-dark);
     padding: 4rem 2rem;
     text-align: center;
 }
@@ -112,8 +113,9 @@ body {
    ============================================ */
 
 .footer {
-    background-color: var(--primary-color);
-    color: var(--white);
+    /* remove dark/blue footer background to match site look */
+    background-color: transparent;
+    color: var(--text-dark);
     padding: 3rem 0 1rem;
     margin-top: 3rem;
 }
@@ -154,10 +156,10 @@ body {
 }
 
 .footer-bottom {
-    border-top: 1px solid #444;
+    border-top: 1px solid rgba(0,0,0,0.08);
     padding-top: 2rem;
     text-align: center;
-    color: #bbb;
+    color: #666;
 }
 
 /* ============================================

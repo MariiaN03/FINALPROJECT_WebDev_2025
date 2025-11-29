@@ -1,5 +1,5 @@
 // ============================================
-// IMAGINARY INNS - BOOKING PAGE FUNCTIONALITY
+// hotel name - BOOKING PAGE FUNCTIONALITY
 // ============================================
 
 document.addEventListener('DOMContentLoaded', function() {

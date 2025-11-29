@@ -3,15 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Your Stay - Imaginary Inns</title>
+    <title>Book Your Stay - hotel name</title>
     <link rel="stylesheet" href="../css/Menu.css">
     <link rel="stylesheet" href="../css/BookingPage.css">
+    <style>
+        /* Page-specific overrides for BookingPage header: make header transparent so
+           the floral background shows through (only on BookingPage). */
+        #menuID, .menu {
+            background-color: transparent !important;
+            background-image: none !important;
+            box-shadow: none !important;
+            border-bottom: none !important;
+        }
+
+    /* Keep the slide-out menu overlay functional and visibly separate: styles come from Menu.css */
+
+        /* Ensure header text is readable on the new beige background */
+        #menuID .menuTitle, #menuID .menuLink, #menuID .bookNowText {
+            color: #3a2a2a !important;
+        }
+    </style>
 </head>
 <body>
     <!-- Menu -->
-    <div id="menuID" class="menu">
+    <div id="menuID" class="menu" style="background-color: transparent !important; box-shadow: none;">
         <a href="../html/MainPage.html"><img id="menuIMGID" class="menuIMG" src="../img/TemproraryLogoImg.png" alt="Menu Icon"></a>
-        <h2 id="menuTitleID" class="menuTitle">IMAGINARY INNS</h2>
+    <h2 id="menuTitleID" class="menuTitle">hotel name</h2>
         <div id="BookNowID" class="bookNow">
             <a id="bookNowTextID" class="bookNowText" href="../html/BookingPage.html">BOOK NOW</a>
         </div>
@@ -28,7 +45,7 @@
                 <div class="line b"></div>
             </div>
             <a href="../html/MainPage.html"><img id="menuIMGoptionsID" class="menuIMGoptions" src="../img/TemproraryLogoImg.png" alt="Menu Icon"></a>
-            <h2 id="menuTitleIDoptions" class="menuTitleOptions">IMAGINARY INNS</h2>
+            <h2 id="menuTitleIDoptions" class="menuTitleOptions">hotel name</h2>
 
             <div id="menuLinksID" class="menuLinks">
                 <a class="menuLink" href="../html/Rooms.html">ROOMS</a>
@@ -44,10 +61,10 @@
         </div>
     </div>
 
-    <!-- Page Title -->
-    <section class="page-title">
+    <!-- Page Title (hidden — styling moved into centered popup) -->
+    <section class="page-title" style="display:none;">
         <h1>Book Your Stay</h1>
-        <p>Reserve your perfect room at Imaginary Inns</p>
+        <p>Reserve your perfect room at hotel name</p>
     </section>
 
     <!-- Booking Form -->
@@ -179,7 +196,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Imaginary Inns</h3>
+                    <h3>hotel name</h3>
                     <p>Your home away from home</p>
                 </div>
                 <div class="footer-section">
@@ -192,16 +209,23 @@
                 </div>
                 <div class="footer-section">
                     <h3>Contact</h3>
-                    <p>📞 +1-800-INN-BOOK<br>✉️ info@imaginaryinns.com</p>
+                    <p>📞 +1-800-INN-BOOK<br>✉️ info@hotelname.com</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Imaginary Inns. All rights reserved.</p>
+                <p>&copy; 2025 hotel name. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script src="../js/Menu.js"></script>
     <script src="../js/Booking.js"></script>
+    <script>
+        // Put keyboard focus into the first input to aid accessibility
+        document.addEventListener('DOMContentLoaded', function() {
+            const first = document.getElementById('firstName');
+            if (first) first.focus();
+        });
+    </script>
 </body>
 </html>
