@@ -1,38 +1,38 @@
-/* Basic styles for single-room page */
-:root{
-	--max-width:1100px;
-	--accent:#8b6f6f;
-	--muted:#777;
-}
-body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color:#222; }
-.room-page{ max-width:var(--max-width); margin:28px auto; padding:0 16px; }
-.room-top{ display:flex; gap:28px; align-items:flex-start; }
-.room-carousel{ position:relative; flex:1 1 60%; background:#f7f7f7; border-radius:6px; overflow:hidden; }
-.slides{ position:relative; }
-.room-slide{ width:100%; display:none; height:420px; object-fit:cover; }
-.room-slide.active{ display:block; }
-.carousel-btn{ position:absolute; top:50%; transform:translateY(-50%); background:rgba(255,255,255,0.85); border:0; width:44px; height:44px; border-radius:50%; cursor:pointer; font-size:22px; line-height:44px; text-align:center; }
-.carousel-btn.prev{ left:12px; }
-.carousel-btn.next{ right:12px; }
-.carousel-dots{ display:flex; gap:8px; justify-content:center; padding:10px 0; }
-.carousel-dots .dot{ width:10px; height:10px; border-radius:50%; background:#ddd; border:0; cursor:pointer; }
-.carousel-dots .dot.active{ background:var(--accent); }
 
-.room-summary{ flex:0 0 320px; background:#fff; padding:20px; border-radius:6px; box-shadow:0 4px 12px rgba(0,0,0,0.05); }
-.room-title{ margin:0 0 8px; font-size:22px; }
-.room-meta{ margin:0 0 12px; color:var(--muted); font-size:14px; }
-.room-price{ font-weight:700; font-size:20px; margin:0 0 16px; }
-.book-btn{ display:inline-block; background:var(--accent); color:#fff; padding:10px 14px; border-radius:4px; text-decoration:none; margin-bottom:14px; }
+/* Basic Rooms page styles (keeps it simple and reusable) */
+:root{--accent:#8b6f6f;--muted:#f3ecec}
+body{font-family: Arial, Helvetica, sans-serif;color:#222;margin:0;padding:0;background:#fff}
+.room-page{max-width:1100px;margin:40px auto;padding:0 20px}
+.room-hero{display:flex;gap:28px;align-items:flex-start}
+.carousel{position:relative;flex:1 1 60%;background:#fafafa;padding:12px;border-radius:6px}
+.carousel-track{position:relative;overflow:hidden;height:360px;display:flex;align-items:center;justify-content:center}
+.slide{display:none;max-width:100%;max-height:100%;object-fit:cover;border-radius:4px}
+.slide.active{display:block}
+.carousel-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.45);color:#fff;border:none;width:36px;height:48px;border-radius:4px;cursor:pointer;font-size:22px}
+.carousel-btn.prev{left:8px}
+.carousel-btn.next{right:8px}
+.dots{display:flex;gap:8px;justify-content:center;margin-top:10px}
+.dot{width:10px;height:10px;background:#ddd;border-radius:50%;border:none;cursor:pointer}
+.dot.active{background:var(--accent)}
 
-.room-features h3{ margin:12px 0 8px; font-size:16px; }
-.room-features ul{ list-style:none; padding:0; margin:0; display:grid; grid-template-columns:repeat(2, 1fr); gap:8px; }
-.room-features li{ background:#fafafa; padding:8px; border-radius:4px; font-size:14px; color:var(--muted); }
+.room-summary{flex:0 0 34%;padding:16px}
+.room-title{margin:6px 0 10px;font-size:28px}
+.price-row{display:flex;align-items:baseline;gap:8px}
+.price{font-size:28px;font-weight:700;color:var(--accent)}
+.per-night{color:#777}
+.mini-features{display:flex;gap:8px;margin:12px 0}
+.feat{background:#f4f4f4;padding:6px 10px;border-radius:4px;font-size:14px}
+.btn-book{display:inline-block;margin-top:14px;padding:10px 14px;background:var(--accent);color:#fff;text-decoration:none;border-radius:4px}
 
-.room-details{ margin-top:20px; padding:18px; background:#fff; border-radius:6px; }
+.room-details{margin-top:30px;padding:18px;background:#fff;border-top:1px solid #eee}
+.features-list{display:flex;gap:18px;list-style:none;padding:0;margin:8px 0}
+.features-list li{background:#f9f9f9;padding:8px 10px;border-radius:4px}
 
-/* Responsive */
-@media(max-width:900px){
-	.room-top{ flex-direction:column; }
-	.room-summary{ width:100%; }
-	.room-slide{ height:300px; }
+.site-footer{margin-top:40px;padding:18px 0;background:#f2f2f2;text-align:center;color:#666}
+
+@media (max-width:800px){
+	.room-hero{flex-direction:column}
+	.room-summary{order:2;width:100%}
+	.carousel{order:1;width:100%}
+	.carousel-track{height:260px}
 }

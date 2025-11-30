@@ -1,16 +1,15 @@
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Room — HOTEL NAME</title>
-		<link rel="stylesheet" href="../css/MainPage.css">
-		<link rel="stylesheet" href="../css/Menu.css">
-		<link rel="stylesheet" href="../css/Rooms.css">
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Room - Hotel Name</title>
+		<link rel="stylesheet" href="../css/Menu.css" />
+		<link rel="stylesheet" href="../css/Rooms.css" />
 	</head>
-
 	<body>
-		<!-- Reuse the site's menu (Menu.js expects these IDs) -->
+		<!-- Menu (copied structure so Menu.js works across pages) -->
 		<div id="menuID" class="menu">
 			<a href="../html/MainPage.html"><img id="menuIMGID" class="menuIMG" src="../img/TemproraryLogoImg.png" alt="Menu Icon"></a>
 			<h2 id="menuTitleID" class="menuTitle">HOTEL NAME</h2>
@@ -25,19 +24,22 @@
 
 			<div id="menuOptionsID" class="menuOptions">
 				<div class="menuOverlay" id="menuOverlayID"></div>
+
 				<div class="closeBtn" id="closeBtnID">
 					<div class="line a"></div>
 					<div class="line b"></div>
 				</div>
 				<a href="../html/MainPage.html"><img id="menuIMGoptionsID" class="menuIMGoptions" src="../img/TemproraryLogoImg.png" alt="Menu Icon"></a>
 				<h2 id="menuTitleIDoptions" class="menuTitleOptions">HOTEL NAME</h2>
+
 				<div id="menuLinksID" class="menuLinks">
 					<a class="menuLink" href="../html/Rooms.html">ROOMS</a>
 					<a class="menuLink" href="../html/Services.html">SERVICES</a>
 					<a class="menuLink" href="../html/Gallery.html">GALLERY</a>
-					<hr class="menuLinkHR">
+					<hr class="menuLinkHR" />
 					<a class="menuLink" href="../html/Contact.html">CONTACT</a>
 				</div>
+
 				<div id="BookNowMenuID" class="bookNowMenu">
 					<a id="bookNowTextMenuID" class="bookNowTextMenu" href="../html/BookingPage.html">BOOK NOW</a>
 				</div>
@@ -47,74 +49,90 @@
 		<script src="../js/Menu.js"></script>
 
 		<main class="room-page">
-			<section class="room-top">
-				<div class="room-carousel" id="roomCarousel">
-					<button class="carousel-btn prev" id="prevBtn" aria-label="Previous">‹</button>
-					<div class="slides">
-						<img class="room-slide active" src="../img/Bedroom.jpg" alt="Room image 1">
-						<img class="room-slide" src="../img/Bedroom2.jpg" alt="Room image 2">
-						<img class="room-slide" src="../img/Bedroom3.jpg" alt="Room image 3">
+			<section class="room-hero">
+				<div class="carousel" id="carousel">
+					<button class="carousel-btn prev" id="prevBtn">‹</button>
+					<div class="carousel-track">
+						<img class="slide active" src="../img/Bedroom3.jpg" alt="Room photo 1">
+						<img class="slide" src="../img/Bedroom4.jpg" alt="Room photo 2">
+						<img class="slide" src="../img/Bedroom5.jpg" alt="Room photo 3">
 					</div>
-					<button class="carousel-btn next" id="nextBtn" aria-label="Next">›</button>
-					<div class="carousel-dots" id="carouselDots"></div>
+					<button class="carousel-btn next" id="nextBtn">›</button>
+					<div class="dots" id="dots"></div>
 				</div>
 
-				<aside class="room-summary">
+				<div class="room-summary">
 					<h1 class="room-title">Deluxe Room</h1>
-					<p class="room-meta">2 Guests · 1 Bed · Free Wi‑Fi</p>
-					<p class="room-price">$149 <span class="per-night">/ Night</span></p>
-					<a class="btn book-btn" href="../html/BookingPage.html">Book this room now</a>
-
-					<div class="room-features">
-						<h3>Features</h3>
-						<ul>
-							<li>TV</li>
-							<li>Free Wi‑Fi</li>
-							<li>Ensuite Bathroom</li>
-							<li>Breakfast available</li>
-						</ul>
+					<div class="price-row">
+						<span class="price">$149</span>
+						<span class="per-night">/Night</span>
 					</div>
-				</aside>
+					<div class="mini-features">
+						<div class="feat">TV</div>
+						<div class="feat">Free Wi‑Fi</div>
+						<div class="feat">Ensuite</div>
+					</div>
+					<a class="btn-book" href="../html/BookingPage.html">Book this room now</a>
+				</div>
 			</section>
 
 			<section class="room-details">
-				<h2>About this room</h2>
-				<p><!-- Room description can be added here by you --></p>
+				<h2>Room description</h2>
+				<p class="room-desc">(You can add the full room description here later.)</p>
+
+				<h3>Features</h3>
+				<ul class="features-list">
+					<li>King-size bed</li>
+					<li>Large windows</li>
+					<li>Complimentary breakfast</li>
+				</ul>
 			</section>
 		</main>
 
+		<footer class="site-footer">
+			<div class="footer-inner">
+				<p>HOTEL NAME • address • phone • email</p>
+			</div>
+		</footer>
+
 		<script>
-			// Small inline carousel for the Room page (keeps changes local, no new files)
+			// Small carousel implementation (no external files)
 			(function() {
-				const slides = Array.from(document.querySelectorAll('.room-slide'));
-				const prev = document.getElementById('prevBtn');
-				const next = document.getElementById('nextBtn');
-				const dotsContainer = document.getElementById('carouselDots');
-				if (!slides.length) return;
+				const track = document.querySelector('.carousel-track');
+				const slides = Array.from(document.querySelectorAll('.slide'));
+				const prevBtn = document.getElementById('prevBtn');
+				const nextBtn = document.getElementById('nextBtn');
+				const dotsContainer = document.getElementById('dots');
+				let index = 0;
 
-				let idx = 0;
-
-				function show(i) {
-					slides.forEach(s => s.classList.remove('active'));
-					slides[i].classList.add('active');
-					Array.from(dotsContainer.children).forEach(d => d.classList.remove('active'));
-					if (dotsContainer.children[i]) dotsContainer.children[i].classList.add('active');
+				function createDots() {
+					slides.forEach((s, i) => {
+						const d = document.createElement('button');
+						d.className = 'dot' + (i === 0 ? ' active' : '');
+						d.dataset.index = i;
+						d.addEventListener('click', () => goTo(i));
+						dotsContainer.appendChild(d);
+					});
 				}
 
-				// build dots
-				slides.forEach((s, i) => {
-					const d = document.createElement('button');
-					d.className = 'dot' + (i === 0 ? ' active' : '');
-					d.setAttribute('aria-label', 'Show slide ' + (i+1));
-					d.addEventListener('click', () => { idx = i; show(idx); });
-					dotsContainer.appendChild(d);
-				});
+				function update() {
+					slides.forEach((s, i) => s.classList.toggle('active', i === index));
+					const dots = Array.from(dotsContainer.children);
+					dots.forEach((d, i) => d.classList.toggle('active', i === index));
+				}
 
-				prev.addEventListener('click', () => { idx = (idx - 1 + slides.length) % slides.length; show(idx); });
-				next.addEventListener('click', () => { idx = (idx + 1) % slides.length; show(idx); });
+				function prev() { index = (index - 1 + slides.length) % slides.length; update(); }
+				function next() { index = (index + 1) % slides.length; update(); }
+				function goTo(i) { index = i; update(); }
 
-				// optional auto-rotate
-				setInterval(() => { idx = (idx + 1) % slides.length; show(idx); }, 5000);
+				prevBtn.addEventListener('click', prev);
+				nextBtn.addEventListener('click', next);
+
+				// Auto-rotate
+				setInterval(next, 6000);
+
+				createDots();
+				update();
 			})();
 		</script>
 	</body>
