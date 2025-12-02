@@ -19,14 +19,15 @@
     /* Keep the slide-out menu overlay functional and visibly separate: styles come from Menu.css */
 
         /* Ensure header text is readable on the new beige background */
-        #menuID .menuTitle, #menuID .menuLink, #menuID .bookNowText {
-            color: #3a2a2a !important;
-        }
+        /* Keep the hotel name in the previous darker color for contrast */
+        #menuID .menuTitle { color: #3a2a2a !important; }
+        /* Keep links and the BOOK NOW text white so they remain visible */
+        #menuID .menuLink, #menuID .bookNowText { color: #ffffff !important; }
     </style>
 </head>
 <body>
     <!-- Menu -->
-    <div id="menuID" class="menu" style="background-color: transparent !important; box-shadow: none;">
+    <div id="menuID" class="menu" style="background-color: #808080 !important; box-shadow: none;">
         <a href="../html/MainPage.html"><img id="menuIMGID" class="menuIMG" src="../img/TemproraryLogoImg.png" alt="Menu Icon"></a>
     <h2 id="menuTitleID" class="menuTitle">hotel name</h2>
         <div id="BookNowID" class="bookNow">
@@ -102,7 +103,7 @@
                     <!-- Booking Details -->
                     <div class="form-section">
                         <h3>Booking Details</h3>
-                        
+                    
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="checkIn">Check-in Date *</label>
@@ -132,6 +133,24 @@
                                     <option value="2" selected>2 Guests</option>
                                     <option value="3">3 Guests</option>
                                     <option value="4">4 Guests</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="separateRooms">Need Separate Rooms?</label>
+                                <select id="separateRooms" name="separateRooms">
+                                    <option value="no" selected>No - Single Room</option>
+                                    <option value="yes">Yes - Need Multiple Rooms</option>
+                                </select>
+                            </div>
+                            <div class="form-group" id="numRoomsGroup" style="display:none;">
+                                <label for="numRooms">Number of Rooms</label>
+                                <select id="numRooms" name="numRooms">
+                                    <option value="2">2 Rooms</option>
+                                    <option value="3">3 Rooms</option>
+                                    <option value="4">4 Rooms</option>
                                 </select>
                             </div>
                         </div>
@@ -196,8 +215,6 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>hotel name</h3>
-                    <p>Your home away from home</p>
                 </div>
                 <div class="footer-section">
                     <h3>Quick Links</h3>

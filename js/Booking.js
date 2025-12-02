@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const checkInInput = document.getElementById('checkIn');
     const checkOutInput = document.getElementById('checkOut');
     const roomTypeSelect = document.getElementById('roomType');
+    const separateRoomsSelect = document.getElementById('separateRooms');
+    const numRoomsGroup = document.getElementById('numRoomsGroup');
+    const numRoomsSelect = document.getElementById('numRooms');
 
     // Room prices
     const roomPrices = {
@@ -20,6 +23,18 @@ document.addEventListener('DOMContentLoaded', function() {
         deluxe: 'Deluxe Room',
         luxury: 'Luxury Suite'
     };
+
+    // Show/hide number of rooms field based on separate rooms selection
+    separateRoomsSelect.addEventListener('change', function() {
+        if (this.value === 'yes') {
+            numRoomsGroup.style.display = 'block';
+        } else {
+            numRoomsGroup.style.display = 'none';
+        }
+        updatePriceSummary();
+    });
+
+    numRoomsSelect.addEventListener('change', updatePriceSummary);
 
     // Set minimum date to today
     const today = new Date().toISOString().split('T')[0];
@@ -43,6 +58,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const selectedRoom = roomTypeSelect.value;
         const checkIn = checkInInput.value;
         const checkOut = checkOutInput.value;
+        const separateRooms = separateRoomsSelect.value;
+        const numRooms = separateRooms === 'yes' ? parseInt(numRoomsSelect.value) : 1;
 
         if (!selectedRoom || !checkIn || !checkOut) {
             return;
@@ -50,11 +67,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const nightly = roomPrices[selectedRoom];
         const nights = getDaysBetween(checkIn, checkOut);
-        const subtotal = nightly * nights;
+        const roomTotal = nightly * nights * numRooms;
+        const subtotal = roomTotal;
         const taxes = subtotal * 0.12;
         const total = subtotal + taxes;
 
-        document.getElementById('summaryRoom').textContent = roomNames[selectedRoom];
+        const roomLabel = numRooms > 1 ? `${roomNames[selectedRoom]} (${numRooms} rooms)` : roomNames[selectedRoom];
+        
+        document.getElementById('summaryRoom').textContent = roomLabel;
         document.getElementById('summaryRate').textContent = formatCurrency(nightly);
         document.getElementById('summaryNights').textContent = nights;
         document.getElementById('summarySubtotal').textContent = formatCurrency(subtotal);

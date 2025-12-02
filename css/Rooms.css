@@ -1,13 +1,38 @@
+:root{--accent:#8b6f6f;--muted:#f3ecec;--text-dark:#333;--secondary-color:#d4a574}
+body{font-family: Arial, Helvetica, sans-serif;color:#222;margin:0;padding:0;padding-top:100px;padding-bottom:150px;min-height:150vh;background:#fff}
+.container{max-width:1200px;margin:0 auto;padding:0 2rem}
 
-/* Basic Rooms page styles (keeps it simple and reusable) */
-:root{--accent:#8b6f6f;--muted:#f3ecec}
-body{font-family: Arial, Helvetica, sans-serif;color:#222;margin:0;padding:0;background:#fff}
-.room-page{max-width:1100px;margin:40px auto;padding:0 20px}
+.page-title{background: transparent;color: #333;padding: 4rem 2rem;text-align: center}
+.page-title h1{font-size: 3rem;margin-bottom: 0.5rem}
+.page-title p{font-size: 1.2rem;color: #d4a574}
+
+.room-page{max-width:2000px;width: 100%;margin:0 auto;padding:28px 32px;min-height: calc(110vh - 80px);display: flex;flex-direction: column;gap: 24px}
 .room-hero{display:flex;gap:28px;align-items:flex-start}
-.carousel{position:relative;flex:1 1 60%;background:#fafafa;padding:12px;border-radius:6px}
-.carousel-track{position:relative;overflow:hidden;height:360px;display:flex;align-items:center;justify-content:center}
-.slide{display:none;max-width:100%;max-height:100%;object-fit:cover;border-radius:4px}
-.slide.active{display:block}
+.carousel{position:relative;flex:1 1 70%;background:#fafafa;padding:16px;border-radius:6px}
+.carousel-track{position:relative;overflow:hidden;height:500px;display:flex;align-items:center;justify-content:center}
+.slide{
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	max-width:100%;
+	max-height:100%;
+	object-fit:cover;
+	border-radius:4px;
+	opacity:0;
+	transition:opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+	pointer-events:none;
+}
+.slide.active{
+	opacity:1;
+	pointer-events:auto;
+}
+
+@keyframes fadeIn {
+	from { opacity:0; transform:translate(-50%,-50%) scale(0.95); }
+	to { opacity:1; transform:translate(-50%,-50%) scale(1); }
+}
+.slide.active {animation: fadeIn 0.6s ease-in-out}
 .carousel-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.45);color:#fff;border:none;width:36px;height:48px;border-radius:4px;cursor:pointer;font-size:22px}
 .carousel-btn.prev{left:8px}
 .carousel-btn.next{right:8px}
@@ -17,6 +42,7 @@ body{font-family: Arial, Helvetica, sans-serif;color:#222;margin:0;padding:0;bac
 
 .room-summary{flex:0 0 34%;padding:16px}
 .room-title{margin:6px 0 10px;font-size:28px}
+.room-capacity{font-size:14px;color:#666;margin:0 0 12px 0;font-style:italic}
 .price-row{display:flex;align-items:baseline;gap:8px}
 .price{font-size:28px;font-weight:700;color:var(--accent)}
 .per-night{color:#777}
@@ -24,15 +50,30 @@ body{font-family: Arial, Helvetica, sans-serif;color:#222;margin:0;padding:0;bac
 .feat{background:#f4f4f4;padding:6px 10px;border-radius:4px;font-size:14px}
 .btn-book{display:inline-block;margin-top:14px;padding:10px 14px;background:var(--accent);color:#fff;text-decoration:none;border-radius:4px}
 
+.room-details-inline{margin-top:24px;padding:16px 0}
+.room-details-inline h2{font-size:20px;margin-bottom:8px;color:#333}
+.room-details-inline h3{font-size:16px;margin-top:16px;margin-bottom:8px;color:#555}
+.room-details-inline .room-desc{font-size:14px;line-height:1.6;color:#666;margin-bottom:12px}
+.room-details-inline .features-list{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:8px 0}
+.room-details-inline .features-list li{background:#f4f4f4;padding:6px 10px;border-radius:4px;font-size:13px}
+
 .room-details{margin-top:30px;padding:18px;background:#fff;border-top:1px solid #eee}
 .features-list{display:flex;gap:18px;list-style:none;padding:0;margin:8px 0}
 .features-list li{background:#f9f9f9;padding:8px 10px;border-radius:4px}
 
-.site-footer{margin-top:40px;padding:18px 0;background:#f2f2f2;text-align:center;color:#666}
+.footer {background-color: transparent;color: var(--text-dark);padding: 3rem 0 1rem;margin-top: 3rem}
+.footer-content {display: grid;grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));gap: 2rem;margin-bottom: 2rem}
+.footer-section h3 {color: var(--secondary-color);margin-bottom: 1rem}
+.footer-section p {color: #bbb;font-size: 0.95rem}
+.footer-section ul {list-style: none}
+.footer-section ul li {margin-bottom: 0.5rem}
+.footer-section ul li a {color: #bbb;text-decoration: none;transition: color 0.3s ease}
+.footer-section ul li a:hover {color: var(--secondary-color)}
+.footer-bottom {border-top: 1px solid rgba(0,0,0,0.08);padding-top: 2rem;text-align: center;color: #666}
 
 @media (max-width:800px){
 	.room-hero{flex-direction:column}
 	.room-summary{order:2;width:100%}
 	.carousel{order:1;width:100%}
-	.carousel-track{height:260px}
+	.carousel-track{height:350px}
 }

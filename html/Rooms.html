@@ -46,23 +46,72 @@
 			</div>
 		</div>
 
-		<script src="../js/Menu.js"></script>
+	<script src="../js/Menu.js"></script>
 
-		<main class="room-page">
-			<section class="room-hero">
-				<div class="carousel" id="carousel">
-					<button class="carousel-btn prev" id="prevBtn">‹</button>
-					<div class="carousel-track">
-						<img class="slide active" src="../img/Bedroom3.jpg" alt="Room photo 1">
-						<img class="slide" src="../img/Bedroom4.jpg" alt="Room photo 2">
-						<img class="slide" src="../img/Bedroom5.jpg" alt="Room photo 3">
-					</div>
-					<button class="carousel-btn next" id="nextBtn">›</button>
-					<div class="dots" id="dots"></div>
+	<!-- Page Title -->
+	<section class="page-title">
+		<h1>Rooms</h1>
+		<p>Choose your perfect stay at hotel name</p>
+	</section>
+
+	<main class="room-page">
+		<!-- Standard Room -->
+		<section class="room-hero">
+		<div class="carousel">
+				<button class="carousel-btn prev" aria-label="Previous slide">‹</button>
+				<div class="carousel-track">
+					<img class="slide active" src="../img/Bedroom.jpg" alt="Standard room photo 1">
+					<img class="slide" src="../img/Bedroom2.jpg" alt="Standard room photo 2">
+					<img class="slide" src="../img/Bedroom6.jpg" alt="Standard room photo 3">
+					<img class="slide" src="../img/Bathroom3.jpg" alt="Standard room photo 4">
+					<img class="slide" src="../img/View.jpg" alt="Standard room photo 5">
 				</div>
+				<button class="carousel-btn next" aria-label="Next slide">›</button>
+				<div class="dots"></div>
+			</div>				<div class="room-summary">
+					<h1 class="room-title">Standard Room</h1>
+					<p class="room-capacity">Sleeps 1-2 guests • Queen bed</p>
+					<div class="price-row">
+						<span class="price">$89</span>
+						<span class="per-night">/Night</span>
+					</div>
+				<div class="mini-features">
+					<div class="feat">TV</div>
+					<div class="feat">Free Wi‑Fi</div>
+					<div class="feat">City View</div>
+				</div>
+				<a class="btn-book" href="../html/BookingPage.html">Book this room now</a>
+				
+				<div class="room-details-inline">
+					<h2>Standard — Room description</h2>
+					<p class="room-desc">Your escape starts here. Cozy, calm, and crafted for comfort, our Standard Room wraps you in soft lighting, fresh linens, and a queen-size bed that hits the perfect balance between support and sink-in relaxation. Ideal for travelers who want style without the price tag, it's your private recharge station after a long day of exploring or hustling.</p>
 
-				<div class="room-summary">
+					<h3>Features</h3>
+					<ul class="features-list">
+						<li>Queen-size bed</li>
+						<li>Cozy layout</li>
+						<li>Complimentary coffee</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+			<!-- Deluxe Room -->
+			<section class="room-hero">
+			<div class="carousel">
+				<button class="carousel-btn prev" aria-label="Previous slide">‹</button>
+				<div class="carousel-track">
+					<img class="slide active" src="../img/Bedroom3.jpg" alt="Deluxe room photo 1">
+					<img class="slide" src="../img/Bedroom4.jpg" alt="Deluxe room photo 2">
+					<img class="slide" src="../img/Bedroom5.jpg" alt="Deluxe room photo 3">
+					<img class="slide" src="../img/Bathroom.jpg" alt="Deluxe room photo 4">
+					<img class="slide" src="../img/Bathroom2.jpg" alt="Deluxe room photo 5">
+				</div>
+				<button class="carousel-btn next" aria-label="Next slide">›</button>
+				<div class="dots"></div>
+			</div>				<div class="room-summary">
 					<h1 class="room-title">Deluxe Room</h1>
+					<p class="room-capacity">Sleeps 2-4 guests • Comes with pullout couch bed</p>
 					<div class="price-row">
 						<span class="price">$149</span>
 						<span class="per-night">/Night</span>
@@ -73,67 +122,134 @@
 						<div class="feat">Ensuite</div>
 					</div>
 					<a class="btn-book" href="../html/BookingPage.html">Book this room now</a>
+					
+					<div class="room-details-inline">
+						<h2>Deluxe — Room description</h2>
+						<p class="room-desc">Step up your stay. The Deluxe Room gives you space to stretch, breathe, and live a little larger. With a plush king-size bed, elevated décor, and upgraded amenities, it's designed for guests who want more than "just a room." It's a mini-suite feel without the mini-suite price. You'll walk in and immediately think: Oh yeah… this is the good stuff.</p>
+
+						<h3>Features</h3>
+						<ul class="features-list">
+							<li>King-size bed</li>
+							<li>Large windows</li>
+							<li>Complimentary breakfast</li>
+						</ul>
+					</div>
 				</div>
 			</section>
 
-			<section class="room-details">
-				<h2>Room description</h2>
-				<p class="room-desc">(You can add the full room description here later.)</p>
+			<!-- Luxury Suite -->
+			<section class="room-hero">
+		<div class="carousel">
+				<button class="carousel-btn prev" aria-label="Previous slide">‹</button>
+				<div class="carousel-track">
+					<img class="slide active" src="../img/Bedroom4.jpg" alt="Luxury suite photo 1">
+					<img class="slide" src="../img/Bedroom5.jpg" alt="Luxury suite photo 2">
+					<img class="slide" src="../img/Bedroom3.jpg" alt="Luxury suite photo 3">
+					<img class="slide" src="../img/Lobby.jpg" alt="Luxury suite photo 4">
+					<img class="slide" src="../img/Lobby2.jpg" alt="Luxury suite photo 5">
+				</div>
+				<button class="carousel-btn next" aria-label="Next slide">›</button>
+				<div class="dots"></div>
+			</div>				<div class="room-summary">
+					<h1 class="room-title">Luxury Suite</h1>
+					<p class="room-capacity">Sleeps 1-4 guests • King bed + sofa bed</p>
+					<div class="price-row">
+						<span class="price">$299</span>
+						<span class="per-night">/Night</span>
+					</div>
+					<div class="mini-features">
+						<div class="feat">TV</div>
+						<div class="feat">Free Wi‑Fi</div>
+						<div class="feat">Balcony</div>
+					</div>
+					<a class="btn-book" href="../html/BookingPage.html">Book this room now</a>
+					
+					<div class="room-details-inline">
+						<h2>Luxury — Room description</h2>
+						<p class="room-desc">Indulge in the ultimate luxury experience. Our Luxury Suite offers a spacious retreat with a king-size bed, private living area, and breathtaking ocean views. Enjoy exclusive amenities like a suite lounge, private balcony, and complimentary champagne on arrival. Perfect for those who want to elevate their stay to a whole new level of comfort and elegance.</p>
 
-				<h3>Features</h3>
-				<ul class="features-list">
-					<li>King-size bed</li>
-					<li>Large windows</li>
-					<li>Complimentary breakfast</li>
-				</ul>
+						<h3>Features</h3>
+						<ul class="features-list">
+							<li>King-size bed with premium bedding</li>
+							<li>Private living area</li>
+							<li>Complimentary champagne on arrival</li>
+						</ul>
+					</div>
+				</div>
 			</section>
-		</main>
+	</main>
 
-		<footer class="site-footer">
-			<div class="footer-inner">
-				<p>HOTEL NAME • address • phone • email</p>
+	<!-- Footer -->
+	<footer class="footer">
+		<div class="container">
+			<div class="footer-content">
+				<div class="footer-section">
+					<h3>hotel name</h3>
+					<p>Your home away from home</p>
+				</div>
+				<div class="footer-section">
+					<h3>Quick Links</h3>
+					<ul>
+						<li><a href="../html/Rooms.html">Rooms</a></li>
+						<li><a href="../html/Services.html">Services</a></li>
+						<li><a href="../html/BookingPage.html">Booking</a></li>
+					</ul>
+				</div>
+				<div class="footer-section">
+					<h3>Contact</h3>
+					<p>📞 +1-800-INN-BOOK<br>✉️ info@hotelname.com</p>
+				</div>
 			</div>
-		</footer>
+			<div class="footer-bottom">
+				<p>&copy; 2025 hotel name. All rights reserved.</p>
+			</div>
+		</div>
+	</footer>
 
-		<script>
-			// Small carousel implementation (no external files)
-			(function() {
-				const track = document.querySelector('.carousel-track');
-				const slides = Array.from(document.querySelectorAll('.slide'));
-				const prevBtn = document.getElementById('prevBtn');
-				const nextBtn = document.getElementById('nextBtn');
-				const dotsContainer = document.getElementById('dots');
-				let index = 0;
+	<script src="../js/Menu.js"></script>
 
-				function createDots() {
-					slides.forEach((s, i) => {
-						const d = document.createElement('button');
-						d.className = 'dot' + (i === 0 ? ' active' : '');
-						d.dataset.index = i;
-						d.addEventListener('click', () => goTo(i));
-						dotsContainer.appendChild(d);
-					});
-				}
+	<script>
+		// Carousel implementation for all room carousels
+		document.addEventListener('DOMContentLoaded', function() {
+				const carousels = document.querySelectorAll('.carousel');
+				
+				carousels.forEach(carousel => {
+					const slides = Array.from(carousel.querySelectorAll('.slide'));
+					const prevBtn = carousel.querySelector('.carousel-btn.prev');
+					const nextBtn = carousel.querySelector('.carousel-btn.next');
+					const dotsContainer = carousel.querySelector('.dots');
+					let index = 0;
 
-				function update() {
-					slides.forEach((s, i) => s.classList.toggle('active', i === index));
-					const dots = Array.from(dotsContainer.children);
-					dots.forEach((d, i) => d.classList.toggle('active', i === index));
-				}
+					function createDots() {
+						slides.forEach((s, i) => {
+							const d = document.createElement('button');
+							d.className = 'dot' + (i === 0 ? ' active' : '');
+							d.dataset.index = i;
+							d.addEventListener('click', () => goTo(i));
+							dotsContainer.appendChild(d);
+						});
+					}
 
-				function prev() { index = (index - 1 + slides.length) % slides.length; update(); }
-				function next() { index = (index + 1) % slides.length; update(); }
-				function goTo(i) { index = i; update(); }
+					function update() {
+						slides.forEach((s, i) => s.classList.toggle('active', i === index));
+						const dots = Array.from(dotsContainer.children);
+						dots.forEach((d, i) => d.classList.toggle('active', i === index));
+					}
 
-				prevBtn.addEventListener('click', prev);
-				nextBtn.addEventListener('click', next);
+					function prev() { index = (index - 1 + slides.length) % slides.length; update(); }
+					function next() { index = (index + 1) % slides.length; update(); }
+					function goTo(i) { index = i; update(); }
 
-				// Auto-rotate
-				setInterval(next, 6000);
+					prevBtn.addEventListener('click', prev);
+					nextBtn.addEventListener('click', next);
 
-				createDots();
-				update();
-			})();
+					// Auto-rotate every 6 seconds
+					setInterval(next, 6000);
+
+					createDots();
+					update();
+				});
+			});
 		</script>
 	</body>
 </html>
