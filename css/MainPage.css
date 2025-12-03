@@ -3,6 +3,15 @@ body {
     padding: 0;
 
     background-color: beige;
+    overflow-x: hidden;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-dark);
+}
+
+:root {
+    --secondary-color: #d4a574;
+    --text-dark: #333;
 }
 
 
@@ -74,10 +83,441 @@ body {
     top: 92vh;
     left: 50%;
 
+    transform: translateX(-50%);
+    
     z-index: 10;
 }
 .arrow-down img{
     width: 5vh;
+}
+
+/*** CONTETNT SECTION ***/
+    /** First part - logo & 1st text block **/
+.HolderContentLogoIMG{
+    margin-top: 3vh;
+}
+.contentLogoIMG{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    border-radius: 50%;
+    width: 8vw;
+    height: auto;
+}
+.BlockText1 p{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 50%;
+
+    text-align: center;
+
+    font-size: 1.2rem;
+    color: rgb(0, 0, 0);
+}
+
+/** Second part - images&text*button **/
+
+.HotelImage1{
+    position: relative;
+
+    width: 40%;
+    height: auto;
+
+    margin-left: 2.5vw;
+    margin-top: 1vw;
+}
+.HotelDescription1{
+    position: absolute;
+
+    top: 70vw;
+    left: 43%;
+
+    text-align: center;
+    width: 60%;
+}
+.HotelImage2{
+    position: absolute;
+
+    width: 50%;
+    height: auto;
+
+    right: 2.5vw;
+    margin-top: 20vw;
+}
+.HotelDescription2{
+    position: absolute;
+
+    top: 95vw;
+    left: 2.5vw;
+
+    text-align: center;
+    width: 40%;
+}
+.ServicesButton{
+    position: absolute;
+
+    top: 112vw;
+    left: 15%;
+
+    width: 15vw;
+    height: 6vh;
+
+    background-color: #362a27;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ServicesButton a{
+    color: white;
+    font-size: 1.2vw;
+    text-decoration: none;
+}
+
+
+
+.emptyBlock{
+    position: relative;
+    width: 100%;
+    height: 53vh;
+}
+/** ROOMS SECTION **/
+    /**Divider**/
+.section-title {
+    position: relative;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+
+    margin: 60px auto 40px;
+    width: 90%; 
+}
+
+/* lines */
+.section-title::before,
+.section-title::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 40%;      
+    height: 1.5px;
+    background-color: #000;
+    z-index: 1;
+}
+
+.section-title::before {
+    left: 0;
+}
+.section-title::after {
+    right: 0;
+}
+
+
+.section-title span {
+    background-color: rgb(176, 176, 72);  
+    padding: 0 12px;
+    position: relative;
+    z-index: 2;
+}
+    /**Text under divider**/
+.TopTextRoomScroll p{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 50%;
+
+    text-align: center;
+
+    font-size: 1.2rem;
+    color: rgb(0, 0, 0);
+}
+
+/**ROOM SLIDER**/
+    /** Room Reel**/
+.PhotoShowReel{
+    display: flex;
+    justify-content: space-between;  /* РАВНОМЕРНО по краям */
+    align-items: center;
+    gap: 3vw;  /* или сколько нужно */
+    width: 100%;
+    overflow: hidden;
+}
+.roomSR{
+    height: 70vh;
+    object-fit: cover;  /* чтобы картинка обрезалась, а не сжималась */
+    flex-shrink: 0;
+    transition: 0.3s ease;
+}
+.roomSR.active{
+    width: 60%;
+    
+}
+.previous, .next{
+    width: 20%;    /* или 15%/10% — как тебе надо */
+    opacity: 0.7;
+    filter: brightness(0.5);
+}
+
+    /**Dots**/
+.DotesHolder{
+    display: flex;
+    justify-content: space-between;  /* РАВНОМЕРНО по краям */
+    align-items: center;
+    gap: 0.3vw;  /* или сколько нужно */
+    width: 5%;
+
+    position: absolute;
+    left: 50%;
+    
+    transform: translateX(-50%); 
+}
+.dote{
+    position: relative;
+    top: -4vh;
+
+    width: 1vw;
+    height: 1vw;
+
+    border-radius: 50%;
+    border: 1px solid black;
+
+    background-color: #ae9892;
+
+    z-index: 100;
+}
+.dote.active{
+    border: 1px solid  rgb(255, 255, 255); /* чтобы не мешал */
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+}
+
+/** Text for rooms **/
+.RoomDescription h2{
+    position: relative;
+    left: 23%;
+}
+.RoomDescription p{
+    position: relative;
+    left: -2%;
+    text-align: left;
+}
+
+/** button **/
+.RoomButton{
+    position: relative;
+    top: -9vh;
+    left: 83%;
+
+    width: 15vw;
+    height: 6vh;
+
+    background-color: #362a27;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.RoomButton a{
+    color: white;
+    font-size: 1.2vw;
+    text-decoration: none;
+}
+
+/** LOCATION Part **/
+.location{
+    position: relative;
+
+    width: 100%;
+    height: 55vh;
+
+    background-color: rgb(120, 116, 98);
+
+    display: flex;
+    justify-content: center;   /* центр по горизонтали */
+    align-items: center;
+}
+.BoxHolder{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2vw;
+
+    width: 70%;
+    height: 80%;
+
+    background-color: beige;
+}
+.TextLocation, 
+.Map {
+    width: 50%;    
+    height: 100%;
+}
+
+.TextLocation {
+    padding: 2vw; 
+    text-align: left;
+    
+}
+.TextLocation h2{
+    right: 0.3vw;
+    margin-top: 4vh;
+    margin-bottom: 6vh;
+}
+.TextLocation p{
+    width: 100%;
+    text-align: left;
+    margin: 0; 
+}
+
+.Map {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hotel-map {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/**Membership Section**/
+.membership{
+    padding: 1vh 2.5vw;
+    margin-bottom: 12vh;
+}
+
+.membershipContent{
+    position: relative;
+    width: 100%;
+    padding: 40px 0;   
+}
+.ticket-bg {
+  position: absolute;
+  inset: 0;                   
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+
+  transform: scale(2.3, 1.6);      
+  transform-origin: center;    
+
+  pointer-events: none;
+  z-index: 0;     
+}
+.MembershipBlox{
+    position: relative;
+    z-index: 1;
+
+    background: rgba(96, 76, 76, 0.85);
+    color: #fff;
+
+    padding: 1vh 2vw;
+}
+.MembershipBlox p{
+    color: white;
+}
+
+.buttonMember{
+    margin-top: 2vh;
+    margin-left: 82%;
+
+    width: 15vw;
+    height: 6vh;
+
+    background-color: #362a27;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.buttonMember a{
+    color: white;
+    font-size: 1.2vw;
+    text-decoration: none;
+}
+
+/* Footer Section */
+.footer {
+    background-color: white;
+    color: var(--text-dark);
+    padding: 3rem 0 1rem;
+    margin-top: 3rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 0 auto 2rem;   
+    max-width: 1000px;     
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;  
+    text-align: left;
+}
+
+.footer-section h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: left;
+}
+
+.footer-section p {
+    color: #bbb;
+    font-size: 0.95rem;
+    line-height: 1.5rem;
+    margin: 0;
+    text-align: left !important; 
+}
+
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: inline-block;
+    text-align: left; 
+}
+
+.footer-section ul li a:hover {
+    color: var(--secondary-color);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(0,0,0,0.08);
+    padding-top: 2rem;
+    text-align: center;
+    color: #666;
+}
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    white-space: nowrap; 
+    color: #bbb;
+    font-size: 0.95rem;
 }
 
 

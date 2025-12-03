@@ -42,7 +42,8 @@
     position: absolute;
     height: 11vh;
     top: 0;
-    margin-left: 45%;
+    left: 50%;
+    transform: translateX(-50%);
     border-radius: 50%;
 }
 .menuTitle{
@@ -50,7 +51,9 @@
 
     position: absolute;
     top: 35%;
-    left: 43%;
+    
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .openMenu{

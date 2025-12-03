@@ -61,19 +61,145 @@
         </div>        </div>
 
         <div id="contentID" class="content">
+            <div class="HolderContentLogoIMG">
+                <img id="LogoImage" class="contentLogoIMG" src="../img/TemproraryLogoImg.png" alt="Content Image">
+            </div>
+
+            <div class="BlockText1">
+                <p>Welcome to our hotel — a modern and cozy place designed for comfortable relaxation 
+                    and enjoyable stays. We strive to create an atmosphere where every guest feels calm
+                     and at ease. Our team does everything possible to make your visit pleasant and filled
+                      with positive impressions.</p>
+            <div>
+
+            <div class="TextANDPics">
+                <img class="HotelImage1" src="../img/Bedroom4.jpg" alt="Hotel Image">
+                <div class="HotelDescription1">
+                    <p>Our rooms are decorated in warm tones and equipped with everything
+                        you need for a comfortable stay. Here, you can relax after a long journey, work in a quiet
+                        environment, or simply enjoy peaceful moments on your own.</p>
+                </div>
+
+                <img class="HotelImage2" src="../img/OutsideFood.jpg" alt="Hotel Image">
+                <div class="HotelDescription2">
+                    <p>We offer quality service, convenient facilities, and a
+                        thoughtful approach to every guest. In our hotel, you’ll find everything you need
+                        for a comfortable stay — from carefully designed interiors to a welcoming atmosphere.</p>
+                </div>
+                <div class="ServicesButton">
+                    <a class="services-btn" href="../html/Services.html">OUR SERVICES</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="emptyBlock">
         </div>
 
         <div id="roomScrollID" class="roomScroll">
+            <div class="DividerBlock">
+                <h2 class="section-title">OUR ROOMS</h2>
+            </div>
+
+            <div class="TopTextRoomScroll">
+                <p>Our rooms are designed to offer a calm and welcoming atmosphere from the
+                     moment you walk in. Soft colors, thoughtful lighting, and comfortable furnishings
+                      create a space where you can truly unwind. Whether you’re staying for one night or
+                       several days, each room provides a peaceful retreat where you can relax, recharge,
+                        and feel at home.</p>
+            </div>
+
+            <div class="RoomSlider">
+                <div class="PhotoShowReel">
+                    <img class="roomSR previous" src="../img/Bedroom5.jpg" alt="Room Photo">
+                    <img class="roomSR active" src="../img/Bedroom.jpg" alt="Room Photo">
+                    <img class="roomSR next" src="../img/LabyrintheRoom.jpg" alt="Room Photo">
+                </div>
+                <div class="DotesHolder">
+                        <div class="dote previousD"></div>
+                        <div class="dote currentD active"></div>
+                        <div class="dote nextD"></div>
+                </div>
+
+                <div class="RoomDescription">
+                    <h2 id="roomTitle"></h2>
+                    <p id="roomText"></p>
+                </div>
+
+                <div class="RoomButton">
+                    <a class="room-btn" href="">VIEW ALL ROOMS</a>
+                </div>
+            </div>
         </div>
 
         <div id="locationID" class="location">
+            <div class="BoxHolder">
+                <div class="TextLocation">
+                    <h2>OUR LOCATION</h2>
+                    <p>Our hotel is located in a quiet and convenient area, just a short walk from local cafés,
+                         shops, and public transportation. The neighborhood is safe and easily accessible, making
+                          it a comfortable base for exploring the city and its surroundings. Whether you're here for
+                           sightseeing or business, you’ll find everything you need within easy reach.</p>
+                </div>
+                <div class="Map">
+                    <iframe 
+                        class="hotel-map"
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d20992.26711361288!2d2.3522219!3d48.856614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sfr!4v1701453780000!5m2!1sen!2sfr"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
         </div>
 
         <div id="membershipID" class="membership">
+            <h2>Become a Member!</h2>
+            <div class="membershipContent">
+                <img src="../img/Tickets.png" alt="ticket" class="ticket-bg" aria-hidden="true">
+
+                <div class="MembershipBlox">
+                    <h2>Join our community and make every stay more rewarding!</h2>
+                    <p>Pick your membership plan and enjoy exclusive savings,
+                        complimentary breakfast, and extra privileges designed just for you.</p>
+                    <div class="buttonMember">
+                        <a class="member-btn" href="">EXPLORE PLANS</a>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div id="footerID" class="footer">
-        </div>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>hotel name</h3>
+                        <p>Your home away from home</p>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="../html/Rooms.html">Rooms</a></li>
+                            <li><a href="../html/Services.html">Services</a></li>
+                            <li><a href="../html/BookingPage.html">Booking</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Contact</h3>
+
+                        <div class="contact-item">
+                            📞 <span>+1-800-INN-BOOK</span>
+                        </div>
+
+                        <div class="contact-item">
+                            ✉️ <span>info@hotelname.com</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 hotel name. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
 
         <script src="../js/MainPage.js"></script>
     </body>
