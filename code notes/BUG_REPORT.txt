@@ -1,0 +1,83 @@
+HOTEL WEBSITE - BUG REPORT & PROJECT OVERVIEW
+Generated: December 4, 2025
+=========================================
+
+PROJECT STRUCTURE
+-----------------
+html/ - All HTML pages (MainPage, BookingPage, Rooms, Services, Gallery, Contact)
+css/  - Stylesheets for each page + Menu.css shared across all pages
+js/   - JavaScript files (Booking.js, Contact.js, Menu.js)
+img/  - All images (backgrounds, room photos, logos)
+
+KEY FILES & LOCATIONS
+---------------------
+• MainPage.html - Landing page with hero carousel, room previews, location, membership
+• BookingPage.html - Reservation form with payment modal (card validation implemented)
+• Rooms.html - Three room types with expanded carousels (70% width, 500px height)
+• Services.html - Service cards on wine.jpg background with glass effect
+• Gallery.html - Image grid showcase
+• Contact.html - Two-column layout (info cards + contact form)
+• Booking.js - Form validation, payment modal, card validation (16 digits, expiry check, CVV)
+• Contact.js - Contact form validation with email pattern check
+• Menu.js - Hamburger menu functionality across all pages
+
+HIGH PRIORITY (1)
+-----------------
+1. Footer Styling Inconsistent
+   - BookingPage has white footer, other pages have transparent(Mostly due to background)
+   - Fix: Standardize across all pages
+
+MEDIUM PRIORITY (3)
+-------------------
+2. Page Height Inconsistency
+   - Contact: 150vh, Services: 150vh, Gallery: standard, Rooms: standard
+   - Fix: Standardize min-height values
+
+3. CSS Readability
+   - All CSS condensed to single lines makes debugging harder
+   - Consider expanding for maintainability
+
+4. Menu HTML Duplicated
+   - Menu code copied across all 7 HTML files
+   - Consider: Centralized menu component loaded via JavaScript
+
+5. Contact Form No Backend
+   - Form only shows alert, doesn't send data to server
+   - Action: Implement backend API endpoint if needed for production
+
+LOW PRIORITY (3)
+----------------
+6. Test Files Present
+   - test.html and test.css should be removed before deployment
+
+7. Accessibility
+   - Carousel images use generic alt text ("Room image")
+   - Add descriptive alt text for screen readers
+
+8. Performance
+   - Large background images (View.jpg, wine.jpg) not optimized
+   - Fixed backgrounds may impact mobile performance
+
+OVERALL ASSESSMENT
+------------------
+Status: Fully functional and ready for content updates
+- All navigation links working ✓
+- Payment validation complete (16-digit card, expiry check, CVV) ✓
+- Booking flow with payment modal operational ✓
+- Contact page functional with validation ✓
+- Visual design cohesive ✓
+
+COMPLETED FEATURES
+------------------
+✓ Payment modal with fade-in animation
+✓ Card validation (16 digits, expiry dropdown, CVV 3-4 digits)
+✓ Expiry date check (prevents expired cards)
+✓ Responsive room carousels (70% width, 500px height)
+✓ Services page with wine.jpg background and glass-effect cards
+✓ Contact page with info cards and form validation
+✓ Footer standardized across Gallery, Services, Rooms, Contact
+
+RECOMMENDATION
+--------------
+Primary: Standardize footer styling (#1)
+Optional: Backend integration for forms (#5), code cleanup (#3, #4, #6)

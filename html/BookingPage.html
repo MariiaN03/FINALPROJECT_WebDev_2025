@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<!-- ============================================
+     BOOKING PAGE - Reservation form with payment modal
+     Features: Guest info form, room selection, price calculator, payment modal with validation
+     Background: View.jpg with semi-transparent white form overlay
+     ============================================ -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -26,7 +31,7 @@
     </style>
 </head>
 <body>
-    <!-- Menu -->
+    <!-- ========== NAVIGATION MENU ========== -->
     <div id="menuID" class="menu" style="background-color: #808080 !important; box-shadow: none;">
         <a href="../html/MainPage.html"><img id="menuIMGID" class="menuIMG" src="../img/TemproraryLogoImg.png" alt="Menu Icon"></a>
     <h2 id="menuTitleID" class="menuTitle">hotel name</h2>
@@ -62,18 +67,19 @@
         </div>
     </div>
 
-    <!-- Page Title (hidden — styling moved into centered popup) -->
+    <!-- Page title (hidden, form is centered on page) -->
     <section class="page-title" style="display:none;">
         <h1>Book Your Stay</h1>
         <p>Reserve your perfect room at hotel name</p>
     </section>
 
-    <!-- Booking Form -->
+    <!-- ========== BOOKING FORM ========== -->
+    <!-- Multi-step form: guest info → booking details → payment modal -->
     <section class="booking-form-section">
         <div class="container">
             <div class="booking-wrapper">
                 <form class="booking-form" id="bookingForm">
-                    <!-- Guest Information -->
+                    <!-- SECTION 1: Guest Information (name, email, phone) -->
                     <div class="form-section">
                         <h3>Guest Information</h3>
                         
@@ -100,7 +106,7 @@
                         </div>
                     </div>
 
-                    <!-- Booking Details -->
+                    <!-- SECTION 2: Booking Details (dates, room type, guests) -->
                     <div class="form-section">
                         <h3>Booking Details</h3>
                     
@@ -115,6 +121,7 @@
                             </div>
                         </div>
 
+                        <!-- Room type and guest count -->
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="roomType">Room Type *</label>
@@ -137,6 +144,7 @@
                             </div>
                         </div>
 
+                        <!-- Multiple rooms option (shows numRooms dropdown if yes) -->
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="separateRooms">Need Separate Rooms?</label>
@@ -156,7 +164,7 @@
                         </div>
                     </div>
 
-                    <!-- Special Requests -->
+                    <!-- SECTION 3: Special Requests (optional textarea) -->
                     <div class="form-section">
                         <h3>Special Requests</h3>
                         <div class="form-group">
@@ -165,7 +173,7 @@
                         </div>
                     </div>
 
-                    <!-- Price Summary -->
+                    <!-- SECTION 4: Price Summary (auto-calculated by Booking.js) -->
                     <div class="form-section">
                         <h3>Price Summary</h3>
                         <div class="price-summary">
@@ -196,7 +204,7 @@
                         </div>
                     </div>
 
-                    <!-- Terms -->
+                    <!-- Terms agreement checkbox -->
                     <div class="form-section checkbox-section">
                         <label class="checkbox">
                             <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
@@ -204,13 +212,85 @@
                         </label>
                     </div>
 
+                    <!-- Submit button (triggers payment modal) -->
                     <button type="submit" class="btn btn-primary btn-large">Complete Booking</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ========== PAYMENT MODAL ========== -->
+    <!-- Appears after booking form submission, validates card details -->
+    <div id="paymentModal" class="payment-modal">
+        <div class="payment-modal-content">
+            <h2>Payment Information</h2>
+            <form id="paymentForm">
+                <!-- Cardholder name -->
+                <div class="form-group">
+                    <label for="cardName">Cardholder Name</label>
+                    <input type="text" id="cardName" name="cardName" required>
+                </div>
+                
+                <!-- Card number (validated for 16 digits by Booking.js) -->
+                <div class="form-group">
+                    <label for="cardNumber">Card Number</label>
+                    <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456" maxlength="20" required>
+                </div>
+                <!-- Expiry date dropdowns (validated for expiration by Booking.js) -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="expiryMonth">Expiry Month</label>
+                        <select id="expiryMonth" name="expiryMonth" required>
+                            <option value="">Month</option>
+                            <option value="01">01 - January</option>
+                            <option value="02">02 - February</option>
+                            <option value="03">03 - March</option>
+                            <option value="04">04 - April</option>
+                            <option value="05">05 - May</option>
+                            <option value="06">06 - June</option>
+                            <option value="07">07 - July</option>
+                            <option value="08">08 - August</option>
+                            <option value="09">09 - September</option>
+                            <option value="10">10 - October</option>
+                            <option value="11">11 - November</option>
+                            <option value="12">12 - December</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="expiryYear">Expiry Year</label>
+                        <select id="expiryYear" name="expiryYear" required>
+                            <option value="">Year</option>
+                            <option value="25">2025</option>
+                            <option value="26">2026</option>
+                            <option value="27">2027</option>
+                            <option value="28">2028</option>
+                            <option value="29">2029</option>
+                            <option value="30">2030</option>
+                            <option value="31">2031</option>
+                            <option value="32">2032</option>
+                            <option value="33">2033</option>
+                            <option value="34">2034</option>
+                            <option value="35">2035</option>
+                        </select>
+                    </div>
+                    <!-- CVV field (validated for 3-4 digits by Booking.js) -->
+                    <div class="form-group">
+                        <label for="cvv">CVV</label>
+                        <input type="text" id="cvv" name="cvv" placeholder="123" maxlength="4" required>
+                    </div>
+                </div>
+                
+                <!-- Modal action buttons -->
+                <div class="payment-buttons">
+                    <button type="button" class="btn btn-secondary" id="cancelPayment">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Confirm Payment</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <!-- White background (different from other pages) -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -235,7 +315,9 @@
         </div>
     </footer>
 
+    <!-- Menu functionality -->
     <script src="../js/Menu.js"></script>
+    <!-- Form validation, price calculation, payment modal logic -->
     <script src="../js/Booking.js"></script>
     <script>
         // Put keyboard focus into the first input to aid accessibility

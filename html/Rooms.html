@@ -1,5 +1,10 @@
 
 <!DOCTYPE html>
+<!-- ============================================
+     ROOMS PAGE - Three room types with carousels
+     Features: Standard/Deluxe/Luxury rooms, 5-image carousels (70% width, 500px height),
+               inline descriptions, pricing, amenities, Book Now buttons
+     ============================================ -->
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -9,7 +14,7 @@
 		<link rel="stylesheet" href="../css/Rooms.css" />
 	</head>
 	<body>
-		<!-- Menu (copied structure so Menu.js works across pages) -->
+		<!-- ========== NAVIGATION MENU ========== -->
 		<div id="menuID" class="menu">
 			<a href="../html/MainPage.html"><img id="menuIMGID" class="menuIMG" src="../img/TemproraryLogoImg.png" alt="Menu Icon"></a>
 			<h2 id="menuTitleID" class="menuTitle">HOTEL NAME</h2>
@@ -48,15 +53,17 @@
 
 	<script src="../js/Menu.js"></script>
 
-	<!-- Page Title -->
+	<!-- ========== PAGE TITLE ========== -->
 	<section class="page-title">
 		<h1>Rooms</h1>
 		<p>Choose your perfect stay at hotel name</p>
 	</section>
 
 	<main class="room-page">
-		<!-- Standard Room -->
+		<!-- ========== STANDARD ROOM ========== -->
+		<!-- $89/night, Queen bed, Sleeps 1-2 guests -->
 		<section class="room-hero">
+		<!-- Carousel: 5 images, prev/next buttons, dots navigation -->
 		<div class="carousel">
 				<button class="carousel-btn prev" aria-label="Previous slide">‹</button>
 				<div class="carousel-track">
@@ -96,8 +103,10 @@
 			</div>
 		</section>
 
-			<!-- Deluxe Room -->
-			<section class="room-hero">
+		<!-- ========== DELUXE ROOM ========== -->
+		<!-- $149/night, King bed + pullout couch, Sleeps 2-4 guests -->
+		<section class="room-hero">
+			<!-- Carousel: 5 images with bathroom photos -->
 			<div class="carousel">
 				<button class="carousel-btn prev" aria-label="Previous slide">‹</button>
 				<div class="carousel-track">
@@ -137,9 +146,11 @@
 				</div>
 			</section>
 
-			<!-- Luxury Suite -->
-			<section class="room-hero">
-		<div class="carousel">
+		<!-- ========== LUXURY SUITE ========== -->
+		<!-- $299/night, King bed + sofa bed, Sleeps 1-4 guests, Balcony -->
+		<section class="room-hero">
+			<!-- Carousel: 5 images including lobby photos -->
+			<div class="carousel">
 				<button class="carousel-btn prev" aria-label="Previous slide">‹</button>
 				<div class="carousel-track">
 					<img class="slide active" src="../img/Bedroom4.jpg" alt="Luxury suite photo 1">

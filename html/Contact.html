@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!-- ============================================
+     CONTACT PAGE - Two-column layout with info cards and contact form
+     Features: Location/phone/email/hours cards, contact form with validation
+     ============================================ -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - hotel name</title>
+    <link rel="stylesheet" href="../css/Menu.css">
+    <link rel="stylesheet" href="../css/Contact.css">
+</head>
+<body>
+    <!-- ========== NAVIGATION MENU ========== -->
+    <div id="menuID" class="menu">
+        <a href="../html/MainPage.html"><img id="menuIMGID" class="menuIMG" src="../img/TemproraryLogoImg.png" alt="Menu Icon"></a>
+        <h2 id="menuTitleID" class="menuTitle">hotel name</h2>
+        <div id="BookNowID" class="bookNow">
+            <a id="bookNowTextID" class="bookNowText" href="../html/BookingPage.html">BOOK NOW</a>
+        </div>
+        <div id="openMenuID" class="openMenu">
+            <div id="line1ID" class="line1"></div>
+            <div id="line2ID" class="line2"></div>
+            <div id="line3ID" class="line3"></div>
+        </div>
+
+        <div id="menuOptionsID" class="menuOptions">
+            <div class="menuOverlay" id="menuOverlayID"></div>
+            <div class="closeBtn" id="closeBtnID">
+                <div class="line a"></div>
+                <div class="line b"></div>
+            </div>
+            <a href="../html/MainPage.html"><img id="menuIMGoptionsID" class="menuIMGoptions" src="../img/TemproraryLogoImg.png" alt="Menu Icon"></a>
+            <h2 id="menuTitleIDoptions" class="menuTitleOptions">hotel name</h2>
+
+            <div id="menuLinksID" class="menuLinks">
+                <a class="menuLink" href="../html/Rooms.html">ROOMS</a>
+                <a class="menuLink" href="../html/Services.html">SERVICES</a>
+                <a class="menuLink" href="../html/Gallery.html">GALLERY</a>
+                <hr class="menuLinkHR">
+                <a class="menuLink" href="../html/Contact.html">CONTACT</a>
+            </div>
+
+            <div id="BookNowMenuID" class="bookNowMenu">
+                <a id="bookNowTextMenuID" class="bookNowTextMenu" href="../html/BookingPage.html">BOOK NOW</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== PAGE TITLE ========== -->
+    <section class="page-title">
+        <h1>Contact Us</h1>
+        <p>We'd love to hear from you</p>
+    </section>
+
+    <!-- ========== CONTACT SECTION ========== -->
+    <!-- Two-column grid: info cards (left) + contact form (right) -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-wrapper">
+                <!-- LEFT COLUMN: Info cards with hover effect -->
+                <div class="contact-info">
+                    <!-- Location card -->
+                    <div class="info-card">
+                        <div class="info-icon">📍</div>
+                        <h3>Location</h3>
+                        <p>123 Hotel Street<br>City, State 12345<br>United States</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">📞</div>
+                        <h3>Phone</h3>
+                        <p>+1 (800) INN-BOOK<br>+1 (800) 466-2665</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">✉️</div>
+                        <h3>Email</h3>
+                        <p>info@hotelname.com<br>reservations@hotelname.com</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">🕐</div>
+                        <h3>Hours</h3>
+                        <p>Front Desk: 24/7<br>Check-in: 3:00 PM<br>Check-out: 11:00 AM</p>
+                    </div>
+                </div>
+
+                <!-- RIGHT COLUMN: Contact form (validated by Contact.js) -->
+                <div class="contact-form-wrapper">
+                    <h2>Send us a Message</h2>
+                    <form class="contact-form" id="contactForm">
+                        <!-- Name field -->
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <!-- Email field (validated with pattern) -->
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <!-- Phone field (optional) -->
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <!-- Subject dropdown -->
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="reservation">Reservation Inquiry</option>
+                                <option value="general">General Question</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="complaint">Complaint</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Message textarea -->
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        
+                        <!-- Submit button -->
+                        <button type="submit" class="btn btn-primary btn-large">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <!-- Transparent background footer -->\n    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>hotel name</h3>
+                    <p>Your home away from home</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../html/Rooms.html">Rooms</a></li>
+                        <li><a href="../html/Services.html">Services</a></li>
+                        <li><a href="../html/BookingPage.html">Booking</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>📞 +1-800-INN-BOOK<br>✉️ info@hotelname.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 hotel name. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Menu functionality -->
+    <script src="../js/Menu.js"></script>
+    <!-- Contact form validation -->
+    <script src="../js/Contact.js"></script>
+</body>
+</html>

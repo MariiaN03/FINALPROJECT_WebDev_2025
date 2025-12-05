@@ -24,8 +24,8 @@ body {
     background-attachment: fixed;
     position: relative;
     padding-top: 150px;
-    padding-bottom: 400px;
-    min-height: 300vh;
+    padding-bottom: 0px;
+    min-height: 200vh;
 }
 
 .container {max-width: 1200px;margin: 0 auto;padding: 0 2rem;border-radius: 15px}
@@ -78,6 +78,21 @@ body {
 .btn-primary {background-color: var(--secondary-color);color: var(--white)}
 .btn-primary:hover {background-color: #c49560;transform: translateY(-2px);box-shadow: var(--shadow-lg)}
 .btn-large {padding: 1.2rem 3rem;font-size: 1.1rem;width: 100%}
+
+.payment-modal {display: none;position: fixed;top: 0;left: 0;width: 100%;height: 100%;background: rgba(0,0,0,0.7);z-index: 1000;justify-content: center;align-items: center;opacity: 0;transition: opacity 0.3s ease}
+.payment-modal.show {display: flex;animation: fadeIn 0.3s ease forwards}
+.payment-modal-content {background: var(--white);padding: 2.5rem;border-radius: 12px;max-width: 500px;width: 90%;box-shadow: 0 10px 40px rgba(0,0,0,0.3);transform: scale(0.9);transition: transform 0.3s ease}
+.payment-modal.show .payment-modal-content {transform: scale(1)}
+.payment-modal h2 {color: var(--primary-color);margin-bottom: 1.5rem;font-size: 1.8rem;text-align: center}
+.payment-buttons {display: flex;gap: 1rem;margin-top: 1.5rem}
+.payment-buttons .btn {flex: 1}
+.btn-secondary {background-color: #666;color: var(--white)}
+.btn-secondary:hover {background-color: #555}
+
+@keyframes fadeIn {
+    from {opacity: 0}
+    to {opacity: 1}
+}
 
 .footer {background-color: #ffffff;color: var(--text-dark);padding: 3rem 0 1rem;margin-top: 3rem}
 .footer-content {display: grid;grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));gap: 2rem;margin-bottom: 2rem}

@@ -1,0 +1,138 @@
+============================================
+CODE DOCUMENTATION - FINALPROJECT_WebDev_2025
+Generated: December 4, 2025
+============================================
+
+ALL CODE HAS BEEN ORGANIZED WITH COMMENTS
+------------------------------------------
+
+✓ HTML FILES COMMENTED (6 files)
+-----------------------------------
+1. MainPage.html
+   - Section headers for: Navigation, Hero carousel, Welcome, Rooms preview, Location, Membership, Footer
+   - Comments explain hero carousel functionality, room slider controls, Google Maps embed
+   - Script purposes documented
+
+2. BookingPage.html
+   - Section headers for: Navigation, Booking form (4 sections), Payment modal, Footer
+   - Each form section labeled: Guest info, Booking details, Special requests, Price summary
+   - Payment modal components documented: card fields, expiry dropdowns, CVV, buttons
+   - Notes on validation and background (View.jpg with transparent overlay)
+
+3. Contact.html
+   - Section headers for: Navigation, Page title, Contact section, Footer
+   - Two-column layout explained: Info cards (left) + Contact form (right)
+   - Form fields documented with validation notes
+   - Info cards labeled: Location, Phone, Email, Hours
+
+4. Rooms.html
+   - Section headers for: Navigation, Page title, Standard/Deluxe/Luxury room sections
+   - Each room section documented: Carousel (5 images, 70% width, 500px height), pricing, capacity, amenities
+   - Carousel components noted: prev/next buttons, dots navigation, slide track
+   - Room details inline: descriptions, features lists, Book Now buttons
+   - Three rooms: Standard ($89), Deluxe ($149), Luxury ($299)
+
+5. Services.html
+   - Section headers for: Navigation, Page title, Services grid, Culinary section, Footer
+   - Background explained: wine.jpg with dark overlay and glass-effect cards
+   - Services grid: 6 cards (Swimming Pool, Spa, Fitness, Dining, Concierge, Parking, Kids Club, Business, Entertainment, Room Service)
+   - Culinary section: 6 food/dining images with descriptions
+   - Semi-transparent backgrounds documented for readability
+
+6. Gallery.html
+   - Section headers for: Navigation, Page title, Gallery grid, Footer
+   - Grid layout explained: Responsive auto-fit, minmax(250px, 1fr)
+   - 12 images with hover overlay effects
+   - Images labeled: Rooms, dining areas, lobby, breakfast lounge, outdoor spaces
+
+✓ JAVASCRIPT FILES COMMENTED (4 files)
+---------------------------------------
+1. Menu.js
+   - Header with feature summary
+   - Each event listener documented: open menu, close via overlay, close via X button
+   - Body scroll prevention explained
+   - DOM elements labeled with their purpose
+
+2. Booking.js
+   - Comprehensive header explaining all features:
+     * Real-time price calculation
+     * Date validation
+     * Multiple rooms option
+     * Payment modal with fade-in
+     * Card validation (16 digits, expiry check, CVV)
+     * Masked card number in confirmation
+   - Major sections marked:
+     * Form elements
+     * Room pricing data
+     * Multiple rooms toggle
+     * Date validation
+     * Price calculation (formula documented)
+     * Payment validation (all 5 checks explained)
+     * Confirmation display
+     * Helper functions
+   - Each validation check explained with purpose
+
+3. Contact.js
+   - Header with feature summary
+   - Sections marked: Get form values, Validation, Success
+   - Email pattern validation explained
+   - Note added: No backend integration
+
+4. MainPage.js
+   - Header with feature summary
+   - Two major sections: Hero carousel, Room slider
+   - Hero carousel: 5-second auto-rotation explained
+   - Room slider: Room data array, preview images, dot navigation
+   - Render function logic documented
+   - Index wrapping explained
+
+
+KEY FEATURES
+------------------------
+✓ Payment validation: 16-digit card, expiry date check, CVV 3-4 digits
+✓ Date validation: Check-out must be after check-in, no past dates
+✓ Price calculation: (nightly × nights × rooms) + 12% tax
+✓ Modal system: Fade-in animation, three ways to close menu
+✓ Carousel systems: Hero auto-rotate (5s), Room slider with dots
+✓ Form validation: Contact form email pattern, required fields
+✓ Responsive layout: Two-column grids, mobile breakpoints
+
+PAGE-SPECIFIC FEATURES DOCUMENTED
+-----------------------------------
+MainPage.html:
+  - Hero carousel: 5 images, 5-second auto-rotation
+  - Room slider: 3 rooms with prev/current/next preview, dot navigation
+  - Google Maps embed with location description
+  - Membership section (incomplete)
+
+BookingPage.html:
+  - View.jpg background with semi-transparent white form
+  - Multi-step booking: form → payment modal → confirmation
+  - Real-time price calculator with 12% tax
+  - Payment validation: 16-digit card, expiry dropdowns, CVV
+
+Contact.html:
+  - Two-column responsive grid (switches to single column at 968px)
+  - 4 info cards with hover effect (location, phone, email, hours)
+  - Contact form with email pattern validation
+
+Rooms.html:
+  - Three room types: Standard ($89), Deluxe ($149), Luxury ($299)
+  - 5-image carousels per room (70% width, 500px height)
+  - Inline descriptions with features lists
+  - Direct Book Now buttons for each room
+
+Services.html:
+  - Wine.jpg parallax background with fixed attachment
+  - Dark overlay (rgba(0,0,0,0.4)) for contrast
+  - Glass-effect cards (backdrop-filter: blur(8px))
+  - 6 service amenities + 6 culinary images
+
+Gallery.html:
+  - Responsive grid: auto-fit, minmax(250px, 1fr)
+  - 12 images covering rooms, dining, lobby, outdoor areas
+  - Hover overlay reveals image labels
+
+FILES NOT COMMENTED
+-------------------
+- test.html, test.css (should be removed before deployment)

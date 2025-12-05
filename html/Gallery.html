@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<!-- ============================================
+     GALLERY PAGE - Photo showcase grid
+     Features: Responsive grid (auto-fit, min 250px columns),
+               12 images with hover overlay showing labels
+     ============================================ -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,7 +13,7 @@
     <link rel="stylesheet" href="../css/Gallery.css">
 </head>
 <body>
-    <!-- Menu -->
+    <!-- ========== NAVIGATION MENU ========== -->
     <div id="menuID" class="menu">
         <a href="../html/MainPage.html"><img id="menuIMGID" class="menuIMG" src="../img/TemproraryLogoImg.png" alt="Menu Icon"></a>
     <h2 id="menuTitleID" class="menuTitle">hotel name</h2>
@@ -44,16 +49,18 @@
         </div>
     </div>
 
-    <!-- Page Title -->
+    <!-- ========== PAGE TITLE ========== -->
     <section class="page-title">
         <h1>Gallery</h1>
     <p>Explore the beauty of hotel name</p>
     </section>
 
-    <!-- Gallery Section -->
+    <!-- ========== GALLERY GRID ========== -->
+    <!-- 12 images in responsive grid, hover reveals overlay with label -->
     <section class="gallery-section">
         <div class="container">
             <div class="gallery-grid">
+                <!-- Gallery Item 1: Standard Room -->
                 <div class="gallery-item" style="background-image: url('../img/Bedroom.jpg'); background-size: cover; background-position: center;">
                     <div class="gallery-overlay">Standard Room</div>
                 </div>

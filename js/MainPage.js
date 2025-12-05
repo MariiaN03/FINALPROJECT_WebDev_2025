@@ -1,17 +1,31 @@
+// ============================================
+// MAINPAGE.JS - Hero carousel and room slider
+// ============================================
+// Features:
+// 1. Hero carousel - auto-rotates background images every 5 seconds
+// 2. Room slider - shows 3 rooms with prev/current/next preview
+//    - Click dots to navigate between rooms
+//    - Updates image, title, and description
+// ============================================
+
+// ========== HERO CAROUSEL ==========
+// Auto-rotate background images every 5 seconds
 document.addEventListener('DOMContentLoaded', () => {
     const slides = document.querySelectorAll('.backgroundPhoto');
-    if (!slides.length) return;
+    if (!slides.length) return; // Exit if no slides found
 
     let index = 0;
 
     setInterval(() => {
-        slides[index].classList.remove('active');
-        index = (index + 1) % slides.length;
-        slides[index].classList.add('active');
-    }, 5000); // 5 секунд
+        slides[index].classList.remove('active');           // Hide current slide
+        index = (index + 1) % slides.length;                // Move to next (wraps to 0 at end)
+        slides[index].classList.add('active');              // Show next slide
+    }, 5000); // 5 seconds per slide
 });
 
-/** Room Slider **/
+// ========== ROOM SLIDER ==========
+
+// Room data: images, titles, and descriptions
 const rooms = [
   {
     img: "../img/Bedroom5.jpg",
@@ -30,32 +44,41 @@ const rooms = [
   }
 ];
 
-const imgPrev  = document.querySelector(".roomSR.previous");
-const imgMain  = document.querySelector(".roomSR.active");
-const imgNext  = document.querySelector(".roomSR.next");
-const dots = document.querySelectorAll(".dote");
-const titleEl = document.getElementById("roomTitle");
-const textEl  = document.getElementById("roomText");
+// Get slider elements
+const imgPrev  = document.querySelector(".roomSR.previous");  // Left preview image
+const imgMain  = document.querySelector(".roomSR.active");    // Center main image
+const imgNext  = document.querySelector(".roomSR.next");      // Right preview image
+const dots = document.querySelectorAll(".dote");              // Navigation dots
+const titleEl = document.getElementById("roomTitle");         // Room title text
+const textEl  = document.getElementById("roomText");          // Room description text
 
-let currentIndex = 1;
+let currentIndex = 1; // Start at middle room (Deluxe)
 
+// ========== RENDER SLIDER ==========
+// Updates all slider elements based on currentIndex
 function renderSlider() {
   const total = rooms.length;
+  // Calculate prev/next indices (wraps around)
   const prevIndex = (currentIndex - 1 + total) % total;
   const nextIndex = (currentIndex + 1) % total;
 
+  // Update three preview images
   imgPrev.src = rooms[prevIndex].img;
   imgMain.src = rooms[currentIndex].img;
   imgNext.src = rooms[nextIndex].img;
 
+  // Update title and description
   titleEl.textContent = rooms[currentIndex].title;
   textEl.textContent = rooms[currentIndex].text;
 
+  // Update active dot indicator
   dots.forEach((dot, i) => {
     dot.classList.toggle("active", i === currentIndex);
   });
 }
 
+// ========== DOT NAVIGATION ==========
+// Click any dot to jump to that room
 dots.forEach((dot, index) => {
   dot.addEventListener("click", () => {
     currentIndex = index;   
@@ -63,4 +86,5 @@ dots.forEach((dot, index) => {
   });
 });
 
+// Initialize slider on page load
 renderSlider();

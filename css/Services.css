@@ -18,8 +18,8 @@ body {
     line-height: 1.6;
     color: var(--text-dark);
     min-height: 150vh;
-    padding-top: 100px;
-    padding-bottom: 150px;
+    padding-top: 95px;
+    padding-bottom: 0px;
     background-image: url("../img/wine.jpg");
     background-size: cover;
     background-position: center;
