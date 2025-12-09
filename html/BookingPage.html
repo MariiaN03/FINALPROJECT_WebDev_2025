@@ -12,8 +12,7 @@
     <link rel="stylesheet" href="../css/Menu.css">
     <link rel="stylesheet" href="../css/BookingPage.css">
     <style>
-        /* Page-specific overrides for BookingPage header: make header transparent so
-           the floral background shows through (only on BookingPage). */
+        
         #menuID, .menu {
             background-color: transparent !important;
             background-image: none !important;
@@ -21,12 +20,9 @@
             border-bottom: none !important;
         }
 
-    /* Keep the slide-out menu overlay functional and visibly separate: styles come from Menu.css */
-
-        /* Ensure header text is readable on the new beige background */
-        /* Keep the hotel name in the previous darker color for contrast */
+  
         #menuID .menuTitle { color: #3a2a2a !important; }
-        /* Keep links and the BOOK NOW text white so they remain visible */
+        
         #menuID .menuLink, #menuID .bookNowText { color: #ffffff !important; }
     </style>
 </head>
@@ -280,7 +276,7 @@
                     </div>
                 </div>
                 
-                <!-- Modal action buttons -->
+                <!-- Action buttons -->
                 <div class="payment-buttons">
                     <button type="button" class="btn btn-secondary" id="cancelPayment">Cancel</button>
                     <button type="submit" class="btn btn-primary">Confirm Payment</button>
@@ -314,6 +310,29 @@
             </div>
         </div>
     </footer>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+    
+    <!--=========================== Firebase Configuration ============================-->
+    <script>
+        // For Firebase JS SDK v7.20.0 and later
+            const firebaseConfig = {
+                apiKey: "AIzaSyDosUzN2QZyk7sFMGa8RZ66FOWd_myp7zI",
+                authDomain: "hotel-booking-system-1eeb3.firebaseapp.com",
+                databaseURL: "https://hotel-booking-system-1eeb3-default-rtdb.firebaseio.com",
+                projectId: "hotel-booking-system-1eeb3",
+                storageBucket: "hotel-booking-system-1eeb3.firebasestorage.app",
+                messagingSenderId: "561918890694",
+                appId: "1:561918890694:web:145bd26e79b7115d23bdc7",
+                measurementId: "G-SL5JRNVKZ3"
+            };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+    </script>
 
     <!-- Menu functionality -->
     <script src="../js/Menu.js"></script>

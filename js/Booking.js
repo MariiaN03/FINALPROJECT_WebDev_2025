@@ -195,32 +195,102 @@ document.addEventListener('DOMContentLoaded', function() {
         const taxes = subtotal * 0.12;
         const total = subtotal + taxes;
 
-        // Hide payment modal
-        const paymentModal = document.getElementById('paymentModal');
-        paymentModal.classList.remove('show');
+        // ========== SAVE TO FIREBASE DATABASE ==========
+        // Create booking object with all information
+        const bookingData = {
+            guest: {
+                firstName: firstName,
+                lastName: lastName,
+                email: email,
+                phone: phone
+            },
+            booking: {
+                roomType: roomType,
+                roomLabel: numRooms > 1 ? `${roomNames[roomType]} (${numRooms} rooms)` : roomNames[roomType],
+                checkIn: checkIn,
+                checkOut: checkOut,
+                nights: nights,
+                guests: guests,
+                separateRooms: separateRooms,
+                numRooms: numRooms
+            },
+            pricing: {
+                nightlyRate: nightly,
+                subtotal: subtotal,
+                taxes: taxes,
+                total: total
+            },
+            payment: {
+                cardLast4: cardNumber.slice(-4),
+                cardName: cardName
+            },
+            timestamp: Date.now(),
+            status: 'confirmed'
+        };
 
-        // ========== SHOW CONFIRMATION ==========
-        // Display booking summary with masked card number (last 4 digits only)
-        const roomLabel = numRooms > 1 ? `${roomNames[roomType]} (${numRooms} rooms)` : roomNames[roomType];
-        const confirmation = `Booking Confirmation\n\n` +
-            `Guest: ${firstName} ${lastName}\n` +
-            `Email: ${email}\n` +
-            `Phone: ${phone}\n` +
-            `Room: ${roomLabel}\n` +
-            `Guests: ${guests}\n` +
-            `Check-in: ${formatDate(checkIn)}\n` +
-            `Check-out: ${formatDate(checkOut)}\n` +
-            `Nights: ${nights}\n` +
-            `Total: ${formatCurrency(total)}\n\n` +
-            `Payment processed with card ending in ${cardNumber.slice(-4)}\n` +
-            `Your booking has been confirmed! A confirmation email will be sent to ${email}.`;
+        // Save to Firebase (creates unique ID for each booking)
+        const bookingsRef = firebase.database().ref('bookings');
+        const newBookingRef = bookingsRef.push();
+        
+        newBookingRef.set(bookingData)
+            .then(() => {
+                // Hide payment modal
+                const paymentModal = document.getElementById('paymentModal');
+                paymentModal.classList.remove('show');
 
-        alert(confirmation);
+                // ========== SHOW CONFIRMATION ==========
+                // Display booking summary with masked card number (last 4 digits only)
+                const roomLabel = numRooms > 1 ? `${roomNames[roomType]} (${numRooms} rooms)` : roomNames[roomType];
+                const bookingId = newBookingRef.key;
+                const confirmation = `Booking Confirmation\n\n` +
+                    `Booking ID: ${bookingId}\n\n` +
+                    `Guest: ${firstName} ${lastName}\n` +
+                    `Email: ${email}\n` +
+                    `Phone: ${phone}\n` +
+                    `Room: ${roomLabel}\n` +
+                    `Guests: ${guests}\n` +
+                    `Check-in: ${formatDate(checkIn)}\n` +
+                    `Check-out: ${formatDate(checkOut)}\n` +
+                    `Nights: ${nights}\n` +
+                    `Total: ${formatCurrency(total)}\n\n` +
+                    `Payment processed with card ending in ${cardNumber.slice(-4)}\n` +
+                    `Your booking has been confirmed and saved! A confirmation email will be sent to ${email}.`;
 
-        // Reset both forms and hide multiple rooms dropdown
-        bookingForm.reset();
-        paymentForm.reset();
-        numRoomsGroup.style.display = 'none';
+                alert(confirmation);
+
+                // Reset both forms and hide multiple rooms dropdown
+                bookingForm.reset();
+                paymentForm.reset();
+                numRoomsGroup.style.display = 'none';
+            })
+            .catch((error) => {
+                // Handle Firebase save errors
+                console.error('Error saving booking to Firebase:', error);
+                alert('Booking information saved locally, but there was an error saving to the database. Please contact support with your booking details.\n\nError: ' + error.message);
+                
+                // Still show confirmation even if Firebase fails
+                const paymentModal = document.getElementById('paymentModal');
+                paymentModal.classList.remove('show');
+
+                const roomLabel = numRooms > 1 ? `${roomNames[roomType]} (${numRooms} rooms)` : roomNames[roomType];
+                const confirmation = `Booking Confirmation\n\n` +
+                    `Guest: ${firstName} ${lastName}\n` +
+                    `Email: ${email}\n` +
+                    `Phone: ${phone}\n` +
+                    `Room: ${roomLabel}\n` +
+                    `Guests: ${guests}\n` +
+                    `Check-in: ${formatDate(checkIn)}\n` +
+                    `Check-out: ${formatDate(checkOut)}\n` +
+                    `Nights: ${nights}\n` +
+                    `Total: ${formatCurrency(total)}\n\n` +
+                    `Payment processed with card ending in ${cardNumber.slice(-4)}`;
+
+                alert(confirmation);
+
+                bookingForm.reset();
+                paymentForm.reset();
+                numRoomsGroup.style.display = 'none';
+            });
     });
 
     // ========== HELPER FUNCTIONS ==========
