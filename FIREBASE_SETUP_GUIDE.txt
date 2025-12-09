@@ -64,52 +64,12 @@ bookings/
     timestamp: 1733789123456
 
 ============================================
-SECURITY BEST PRACTICES
+VIEW YOUR BOOKINGS
 ============================================
 
-1. NEVER commit your Firebase config with real API keys to public GitHub repos
-2. Use environment variables or private config files for production
-3. Set up proper Firebase Security Rules before going live
-4. Enable Firebase Authentication for admin access
-5. Consider adding CAPTCHA to prevent spam bookings
+Firebase Console: https://console.firebase.google.com/
+→ Select project → Realtime Database → bookings/
 
-============================================
-TESTING YOUR SETUP
-============================================
-
-1. Open BookingPage.html in your browser
-2. Fill out the booking form completely
-3. Submit the form and complete payment
-4. Check Firebase Console > Realtime Database
-5. You should see a new entry under "bookings"
-
-============================================
-TROUBLESHOOTING
-============================================
-
-Problem: "Firebase is not defined" error
-Solution: Make sure you're accessing BookingPage.html via a web server (not file://)
-         Use Live Server extension in VS Code or run: python -m http.server
-
-Problem: Data not saving to Firebase
-Solution: Check browser console for errors
-         Verify your Firebase config is correct
-         Ensure Realtime Database is enabled
-         Check database security rules allow writes
-
-Problem: Permission denied
-Solution: Database rules are too restrictive
-         For testing, use test mode
-         For production, implement Firebase Authentication
-
-============================================
-NEXT STEPS
-============================================
-
-1. Test your booking system thoroughly
-2. Set up Firebase Authentication for admin panel
-3. Create an admin page to view/manage bookings
-4. Add email notifications using Firebase Cloud Functions
-5. Export booking data for reporting/analytics
+Each booking includes: guest info, room details, pricing, payment reference, and timestamp.
 
 ============================================
