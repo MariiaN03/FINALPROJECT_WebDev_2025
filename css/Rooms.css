@@ -1,14 +1,14 @@
-:root{--accent:#8b6f6f;--muted:#f3ecec;--text-dark:#333;--secondary-color:#d4a574}
+:root{--accent:#C9942E;--muted:#F5F1EA;--text-dark:#333;--secondary-color:#d4a574}
 body{font-family: Arial, Helvetica, sans-serif;color:#222;margin:0;padding:0;padding-top:100px;padding-bottom:0px;min-height:150vh;background:#fff}
 .container{max-width:1200px;margin:0 auto;padding:0 2rem}
 
 .page-title{background: transparent;color: #333;padding: 4rem 2rem;text-align: center}
 .page-title h1{font-size: 3rem;margin-bottom: 0.5rem}
-.page-title p{font-size: 1.2rem;color: #d4a574}
+.page-title p{font-size: 1.2rem;color: #C9942E}
 
 .room-page{max-width:2000px;width: 100%;margin:0 auto;padding:28px 32px;min-height: calc(110vh - 80px);display: flex;flex-direction: column;gap: 24px}
 .room-hero{display:flex;gap:28px;align-items:flex-start}
-.carousel{position:relative;flex:1 1 70%;background:#fafafa;padding:16px;border-radius:6px}
+.carousel{position:relative;flex:1 1 70%;background:#1E2528;padding:16px;border-radius:6px}
 .carousel-track{position:relative;overflow:hidden;height:500px;display:flex;align-items:center;justify-content:center}
 .slide{
 	position:absolute;
