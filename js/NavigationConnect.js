@@ -37,7 +37,41 @@ fetch('NavigationMenu.html')
 
   //OverlaySmallScreen
   document.addEventListener('DOMContentLoaded', () => {
-    // --- твой существующий код здесь (табы и т.п.) ---
+    if (!document.querySelector('.footer')) {
+        const footer = document.createElement('footer');
+        footer.className = 'footer';
+        footer.innerHTML = `
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>hotel name</h3>
+                        <p>Your home away from home</p>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="Rooms.html">Rooms</a></li>
+                            <li><a href="Services.html">Services</a></li>
+                            <li><a href="BookingPage.html">Booking</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Contact</h3>
+                        <div class="contact-item">
+                            📞 <span>+1-800-INN-BOOK</span>
+                        </div>
+                        <div class="contact-item">
+                            ✉️ <span>info@hotelname.com</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 hotel name. All rights reserved.</p>
+                </div>
+            </div>
+        `;
+    document.body.appendChild(footer);
+
     const overlay = document.createElement('div');
     overlay.className = 'fullscreen-warning';
     overlay.innerHTML = `
