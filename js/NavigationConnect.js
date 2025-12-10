@@ -3,8 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const navContainer = document.getElementById('NavigationBar');
 
     if (navContainer) {
-        // Путь меняй на нужный, если страница в подпапке:
-        // например '../NavigationMenu.html'
         fetch('NavigationMenu.html')
             .then(response => {
                 if (!response.ok) {
@@ -47,7 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
         console.warn('NavigationBar контейнер не найден на этой странице');
     }
 
-    // ====== FOOTER (один на всех страницах) ======
     if (!document.querySelector('.footer')) {
         const footer = document.createElement('footer');
         footer.className = 'footer';
@@ -55,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="container">
                 <div class="footer-content">
                     <div class="footer-section">
-                        <h3>hotel name</h3>
+                        <h3>ImaginaryInns</h3>
                         <p>Your home away from home</p>
                     </div>
                     <div class="footer-section">
@@ -72,12 +69,12 @@ document.addEventListener('DOMContentLoaded', () => {
                             📞 <span>+1-800-INN-BOOK</span>
                         </div>
                         <div class="contact-item">
-                            ✉️ <span>info@hotelname.com</span>
+                            ✉️ <span>info@ImaginaryInns.com</span>
                         </div>
                     </div>
                 </div>
                 <div class="footer-bottom">
-                    <p>&copy; 2025 hotel name. All rights reserved.</p>
+                    <p>&copy; 2025 ImaginaryInns. All rights reserved.</p>
                 </div>
             </div>
         `;
