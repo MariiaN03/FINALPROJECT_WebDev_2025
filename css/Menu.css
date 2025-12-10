@@ -6,7 +6,7 @@
     width: 100%;
     height: 10vh;
 
-    background-color: #808080;
+    background-color: #1E2528;
     color: white;
     padding: 10px;
     z-index: 999;
@@ -20,7 +20,7 @@
     width: 9vw;
     height: 5.5vh;
 
-    background-color: #362a27;
+    background-color: #C9942E;
     border-radius: 10px;
 
    
@@ -34,7 +34,7 @@
     text-decoration: none;
 }
 .bookNow:hover{
-    background-color: #5c4a47;
+    background-color: #8c6d35;
     cursor: pointer;
 }
 
@@ -47,7 +47,7 @@
     border-radius: 50%;
 }
 .menuTitle{
-    color: rgb(58, 44, 35);
+    color: #F5F1EA;
 
     position: absolute;
     top: 35%;
@@ -72,7 +72,7 @@
 
     border-radius: 7px;
 
-    background-color: rgb(57, 39, 39);
+    background-color: #F5F1EA;
 }
 .line2, .line3{
     margin-top: 0.8vh;
@@ -91,7 +91,7 @@
     width: 75%;
     height: 100%;
 
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #1E2528;
 
     z-index: 1000;
 }
