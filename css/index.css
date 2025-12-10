@@ -82,3 +82,51 @@ html, body {
     text-decoration: none;
     color: #1E2528;
 }
+
+/** Decription Part **/
+
+.HolderD{
+    background-color: #e0dedb;
+}
+
+.DescriptionSection {
+    max-width: 1200px;        
+    margin: 0 auto;          
+    padding: 3rem 1rem 0;     
+}
+
+
+.DescText {
+    text-align: center;  
+    font-weight: bold;     
+    margin-bottom: 2rem;      
+}
+.DescText p {
+    max-width: 800px;         
+    margin: 0 auto 0.75rem;  
+}
+
+
+.contentBlock1 {
+    display: flex;
+    align-items: center;      
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 6rem;
+}
+.contentBlock1 .text1 {
+    flex: 1;                  
+}
+.contentBlock1 .img1 {
+    flex: 0 0 30%;           
+    max-width: 30%;
+}
+.contentBlock1 .img1 img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+
+
