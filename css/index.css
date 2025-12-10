@@ -1,0 +1,27 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+/** Buttons**/
+.LinkWebsite, .Description, .BugReport{
+    text-decoration: none;
+    color: #ffffff;
+
+    background-color: rgb(62, 62, 62);
+    border-radius: 20px;
+}
+
+/** Main Section **/
+.MainContentHolder{
+    min-height: 100vh;          /* высота = высота окна браузера */
+    display: flex;              /* включаем флекс */
+    justify-content: center;    /* по центру по горизонтали */
+    align-items: center;        /* по центру по вертикали */
+    background: #C9942E;        /* пример фона */
+}
+.HeaderSection{
+    max-width: 600px;           /* чтобы текст не растягивался слишком широко */
+    text-align: center;         /* по желанию: центрируем текст */
+    padding: 1.5rem;
+}
