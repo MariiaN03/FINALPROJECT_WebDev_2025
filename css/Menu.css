@@ -7,7 +7,7 @@
     height: 10vh;
 
     background-color: #1E2528;
-    color: white;
+    color: #6f7b80;
     padding: 10px;
     z-index: 999;
 }
@@ -29,7 +29,7 @@
     align-items: center;
 }
 .bookNowText{
-    color: white;
+    color: #6f7b80;
     font-size: 1.2vw;
     text-decoration: none;
 }
@@ -47,7 +47,7 @@
     border-radius: 50%;
 }
 .menuTitle{
-    color: #F5F1EA;
+    color: #6f7b80;
 
     position: absolute;
     top: 35%;
@@ -72,7 +72,7 @@
 
     border-radius: 7px;
 
-    background-color: #F5F1EA;
+    background-color: #6f7b80;
 }
 .line2, .line3{
     margin-top: 0.8vh;
@@ -91,7 +91,7 @@
     width: 75%;
     height: 100%;
 
-    background-color: #7e7b72;
+    background-color: #7e7b7238;
 
     z-index: 1000;
 }
@@ -113,7 +113,7 @@
     left: 50%;
     width: 100%;
     height: 3px;
-    background: #3a2a2a;
+    background: #6f7b80;
     border-radius: 2px;
     transform-origin: center;
 }
@@ -133,7 +133,7 @@
     height: 100%;
 
     background-color: #262e32;
-    color: #F5F1EA;
+    color: #6f7b80;
 
     display: flex;
     flex-direction: column;
@@ -161,11 +161,11 @@
 .menuTitleOptions{
     margin-top: -5vh;
 
-    color: #F5F1EA;
+    color: #6f7b80;
 }
 
 .menuLinks{
-    background-color: rgba(137, 43, 226, 0);
+    background-color: #a4b1b7;;
 
     margin-top: 5vh;
 
@@ -179,7 +179,7 @@
     margin-top: 3vh;
 
     text-decoration: none;
-    color: white;
+    color: #6f7b80;
     font-size: 1.2vw;
 }
 .menuLink:hover{
@@ -190,7 +190,7 @@
     width: 45%;
     margin-top: 5vh;
     margin-bottom: 2.7vh;
-    border: 0.5px solid white;
+    border: 0.5px solid #6f7b80;
 }
 
 .bookNowMenu{
@@ -201,7 +201,7 @@
     width: 12vw;
     height: 6vh;
 
-    background-color: #362a27;
+    background-color: #C9942E;
     border-radius: 10px;
 
     display: flex;
@@ -214,7 +214,7 @@
     text-decoration: none;
 }
 .bookNowMenu:hover{
-    background-color: #5c4a47;
+    background-color: #8c6d35;
     cursor: pointer;
 }
 
