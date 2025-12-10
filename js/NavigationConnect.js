@@ -69,7 +69,7 @@ fetch('NavigationMenu.html')
                     <p>&copy; 2025 hotel name. All rights reserved.</p>
                 </div>
             </div>
-        `;
+        `;}
     document.body.appendChild(footer);
 
     const overlay = document.createElement('div');
