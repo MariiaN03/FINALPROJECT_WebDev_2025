@@ -1,42 +1,53 @@
-// js/NavigationConnect.js
+document.addEventListener('DOMContentLoaded', () => {
+    // ====== NAVIGATION LOAD ======
+    const navContainer = document.getElementById('NavigationBar');
 
-fetch('NavigationMenu.html')
-  .then(response => response.text())
-  .then(html => {
-    const container = document.getElementById('NavigationBar');
-    container.innerHTML = html;
+    if (navContainer) {
+        // Путь меняй на нужный, если страница в подпапке:
+        // например '../NavigationMenu.html'
+        fetch('NavigationMenu.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('NavigationMenu.html not found');
+                }
+                return response.text();
+            })
+            .then(html => {
+                navContainer.innerHTML = html;
 
-    // ====== MenuLogic ======
-    const openMenu = document.getElementById('openMenuID');        
-    const closeMenu = document.getElementById('closeBtnID');       
-    const closeOutside = document.getElementById('menuOverlayID'); 
-    const block = document.getElementById('menuOptionsID');        
+                // ====== MenuLogic ======
+                const openMenu   = document.getElementById('openMenuID');        
+                const closeMenu  = document.getElementById('closeBtnID');       
+                const closeOutside = document.getElementById('menuOverlayID'); 
+                const block      = document.getElementById('menuOptionsID');        
 
-    if (!openMenu || !closeMenu || !closeOutside || !block) {
-      console.error('Menu elements not found on this page');
-      return;
+                if (!openMenu || !closeMenu || !closeOutside || !block) {
+                    console.error('Menu elements not found on this page');
+                    return;
+                }
+
+                const open = () => {
+                    block.classList.add('Show');          
+                    document.body.style.overflow = 'hidden';
+                };
+
+                const close = () => {
+                    block.classList.remove('Show');      
+                    document.body.style.overflow = 'auto';
+                };
+
+                openMenu.addEventListener('click', open);
+                closeMenu.addEventListener('click', close);
+                closeOutside.addEventListener('click', close);
+            })
+            .catch(err => {
+                console.error('Ошибка загрузки NavigationMenu.html:', err);
+            });
+    } else {
+        console.warn('NavigationBar контейнер не найден на этой странице');
     }
 
-    const open = () => {
-      block.classList.add('Show');          
-      document.body.style.overflow = 'hidden';
-    };
-
-    const close = () => {
-      block.classList.remove('Show');      
-      document.body.style.overflow = 'auto';
-    };
-
-    openMenu.addEventListener('click', open);
-    closeMenu.addEventListener('click', close);
-    closeOutside.addEventListener('click', close);
-  })
-  .catch(err => {
-    console.error('Ошибка загрузки NavigationMenu.html:', err);
-  });
-
-  //OverlaySmallScreen
-  document.addEventListener('DOMContentLoaded', () => {
+    // ====== FOOTER (один на всех страницах) ======
     if (!document.querySelector('.footer')) {
         const footer = document.createElement('footer');
         footer.className = 'footer';
@@ -69,9 +80,11 @@ fetch('NavigationMenu.html')
                     <p>&copy; 2025 hotel name. All rights reserved.</p>
                 </div>
             </div>
-        `;}
-    document.body.appendChild(footer);
+        `;
+        document.body.appendChild(footer);
+    }
 
+    // ====== OVERLAY FOR SMALL SCREEN ======
     const overlay = document.createElement('div');
     overlay.className = 'fullscreen-warning';
     overlay.innerHTML = `
