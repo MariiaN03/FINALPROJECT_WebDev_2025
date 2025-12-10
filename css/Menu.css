@@ -91,7 +91,7 @@
     width: 75%;
     height: 100%;
 
-    background-color: #1E2528;
+    background-color: #7e7b72;
 
     z-index: 1000;
 }
@@ -132,8 +132,8 @@
     width: 25%;
     height: 100%;
 
-    background-color: #7d5858;
-    color: white;
+    background-color: #262e32;
+    color: #F5F1EA;
 
     display: flex;
     flex-direction: column;
@@ -161,7 +161,7 @@
 .menuTitleOptions{
     margin-top: -5vh;
 
-    color: turquoise;
+    color: #F5F1EA;
 }
 
 .menuLinks{
