@@ -2,14 +2,11 @@
     --bg-main: #C9942E;
     --text-dark: #1E2528;
 }
-
-/* Сброс */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 html, body {
     height: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -17,62 +14,69 @@ html, body {
     background-color: var(--bg-main);
 }
 
-/* ВЕСЬ первый экран по центру */
+
+/* MainSection */
 .MainContentHolder {
-    min-height: 100vh;              /* на всю высоту окна */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;        /* центр по вертикали */
-    align-items: center;            /* центр по горизонтали */
-}
+    align-items: center;
 
-/* Заголовок */
+    justify-content: flex-start;
+
+    padding-top: 12vh;
+    padding-bottom: 4vh;   
+}
 .HeaderSection {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 3rem;
 }
-
 .HeaderSection h1 {
-    font-size: 40px;
-    margin-bottom: 10px;
+    font-size: 5rem;
+    margin-bottom: 0.5rem;
 }
-
 .HeaderSection h2 {
-    font-size: 28px;
+    font-size: 2.5rem;
 }
 
-/* Имена и почты — две колонки */
+
 .MembersNames,
 .MembersMails {
     display: flex;
     justify-content: space-between;
-    width: 430px;      /* можно подогнать */
-    font-size: 16px;
+    width: 90vh;           
+    font-size: 1.5rem;
 }
 
-/* убираем лишние внутренние отступы у <p> */
 .MembersNames p,
 .MembersMails p {
     margin: 0;
+    text-align: left;
 }
 
 .MembersMails {
-    margin-bottom: 50px;
+    margin-top: 0.3rem;
+    margin-bottom: 2rem;    
 }
 
-/* Кнопки снизу */
+/* Buttons */
 .SectionHolder {
     display: flex;
     gap: 40px;
+
+    margin-top: auto;
 }
 
 .SectionHolder div {
     background-color: #e0dedb;
     border-radius: 999px;
-    padding: 10px 30px;
-    font-size: 16px;
+    padding: 0.7rem 2.3rem;
+    font-size: 2rem;
 }
-
+.SectionHolder div:hover {
+    background-color: #c7c5c2;
+    cursor: pointer;
+}
 .SectionHolder a,
 .SectionHolder p {
     text-decoration: none;
