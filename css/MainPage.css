@@ -120,7 +120,7 @@ body {
 
 /** Second part - images&text*button **/
 
-.HotelImage1{
+/** .HotelImage1{
     position: relative;
 
     width: 40%;
@@ -176,8 +176,66 @@ body {
     color: #F5F1EA;
     font-size: 1.2vw;
     text-decoration: none;
+} **/
+.TextANDPics {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); /* 2 колонки */
+    gap: 3rem 3rem;
+    align-items: center;
+
+    max-width: 1100px;
+    margin: 4rem auto 0;
+    padding: 0 2rem 4rem;
 }
 
+/* Сбрасываем абсолютное позиционирование (если вдруг осталось выше) */
+.HotelImage1,
+.HotelImage2,
+.HotelDescription1,
+.HotelDescription2,
+.ServicesButton {
+    position: static;
+}
+
+/* Картинки */
+.HotelImage1,
+.HotelImage2 {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Текст рядом с картинками */
+.HotelDescription1,
+.HotelDescription2 {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    text-align: left;
+}
+
+/* Кнопка внизу блока (на всю ширину сетки) */
+.ServicesButton {
+    grid-column: 1 / -1;   /* занять обе колонки */
+    margin: 1rem auto 0;
+
+    width: 230px;
+    height: 50px;
+
+    background-color: #C9942E;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.services-btn {
+    color: #F5F1EA;
+    font-size: 1rem;
+    text-decoration: none;
+    letter-spacing: 0.08em;
+}
 
 
 .emptyBlock{
