@@ -248,4 +248,7 @@ html, body {
     margin: 0 auto;          
     padding: 3rem 1rem 0;   
 }
+.Bug p{
+    font-weight: normal;
+}
 
