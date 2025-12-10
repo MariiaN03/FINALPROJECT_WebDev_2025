@@ -342,3 +342,29 @@
         visibility: hidden;
     }
 }
+
+
+/**Overlay for small screen**/
+.fullscreen-warning {
+    position: fixed;
+    inset: 0;
+    background-color: #000;
+    color: #fff;
+    display: none;                 
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    z-index: 9999;
+}
+
+.fullscreen-warning__inner p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 900px) and (max-height: 700px) {
+    .fullscreen-warning {
+        display: flex;
+    }
+}

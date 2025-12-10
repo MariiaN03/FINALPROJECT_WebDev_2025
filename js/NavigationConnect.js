@@ -34,3 +34,17 @@ fetch('NavigationMenu.html')
   .catch(err => {
     console.error('Ошибка загрузки NavigationMenu.html:', err);
   });
+
+  //OverlaySmallScreen
+  document.addEventListener('DOMContentLoaded', () => {
+    // --- твой существующий код здесь (табы и т.п.) ---
+    const overlay = document.createElement('div');
+    overlay.className = 'fullscreen-warning';
+    overlay.innerHTML = `
+        <div class="fullscreen-warning__inner">
+            <p>Please enlarge your browser window to view this page properly.</p>
+            <p>For the best experience, please open the site in a full-size window.</p>
+        </div>
+    `;
+    document.body.appendChild(overlay);
+});

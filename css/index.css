@@ -258,4 +258,10 @@ html, body {
 .Bug p{
     font-weight: normal;
 }
+.DividerOfDescription2{
+    width: 80%;
+    height: 2px;
+    background-color: var(--bg-main);
+    margin: 4rem auto 0;
+}
 
