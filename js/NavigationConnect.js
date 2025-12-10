@@ -6,11 +6,11 @@ fetch('NavigationMenu.html')
     const container = document.getElementById('NavigationBar');
     container.innerHTML = html;
 
-    // ====== ЛОГИКА МЕНЮ ПРЯМО ЗДЕСЬ ======
-    const openMenu = document.getElementById('openMenuID');        // гамбургер
-    const closeMenu = document.getElementById('closeBtnID');       // крестик
-    const closeOutside = document.getElementById('menuOverlayID'); // тёмный фон
-    const block = document.getElementById('menuOptionsID');        // выезжающее меню
+    // ====== MenuLogic ======
+    const openMenu = document.getElementById('openMenuID');        
+    const closeMenu = document.getElementById('closeBtnID');       
+    const closeOutside = document.getElementById('menuOverlayID'); 
+    const block = document.getElementById('menuOptionsID');        
 
     if (!openMenu || !closeMenu || !closeOutside || !block) {
       console.error('Menu elements not found on this page');
@@ -18,12 +18,12 @@ fetch('NavigationMenu.html')
     }
 
     const open = () => {
-      block.classList.add('Show');          // открыть меню (класс Show уже есть в CSS)
+      block.classList.add('Show');          
       document.body.style.overflow = 'hidden';
     };
 
     const close = () => {
-      block.classList.remove('Show');       // закрыть меню
+      block.classList.remove('Show');      
       document.body.style.overflow = 'auto';
     };
 
