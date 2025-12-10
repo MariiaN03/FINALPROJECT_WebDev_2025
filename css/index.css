@@ -181,31 +181,21 @@ html, body {
     gap: 2rem;
     margin-top: 5rem;
 }
-
-.Database2{
-    flex-direction: row-reverse;
-
-    display: flex;
-    align-items: center;      
-    justify-content: space-between;
-    gap: 2rem;
-    margin-top: 5rem;
-}
-.Database1 .textD1, .Database2 .textD2 {
+.Database1 .textD1{
     flex: 1;                  
 }
-.Database1 .imgD1, .Database2 .imgD2 {
+.Database1 .imgD1{
     flex: 0 0 30%;           
     max-width: 30%;
 }
-.Database1 .imgD1 img, .Database2 .imgD2 img {
+.Database1 .imgD1 img{
     width: 100%;
     height: auto;
     display: block;
     object-fit: cover;
 }
 
-.Database1 .imgD1 img:hover, .Database2 .imgD2 img:hover {
+.Database1 .imgD1 img:hover {
     transform: scale(1.05);
     transition: transform 0.3s ease;
 
