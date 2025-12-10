@@ -1,4 +1,4 @@
-// MENU.JS
+// js/Menu.js
 
 function initMenu() {
     const openMenu = document.getElementById('openMenuID');        // гамбургер
@@ -6,7 +6,7 @@ function initMenu() {
     const closeOutside = document.getElementById('menuOverlayID'); // тёмный фон
     const block = document.getElementById('menuOptionsID');        // выезжающее меню
 
-    // Если каких-то элементов нет — просто выходим, чтобы не было ошибок
+    // Если каких-то элементов нет — тихо уходим
     if (!openMenu || !closeMenu || !closeOutside || !block) {
         console.warn('Menu elements not found on this page');
         return;

@@ -1,10 +1,12 @@
+// js/NavigationConnect.js
+
 fetch('NavigationMenu.html')
   .then(response => response.text())
   .then(html => {
     const container = document.getElementById('NavigationBar');
     container.innerHTML = html;
 
-    // здесь элементы уже есть в DOM → можно инициализировать меню
+    // после вставки меню инициализируем логику
     if (window.initMenu) {
       window.initMenu();
     }
