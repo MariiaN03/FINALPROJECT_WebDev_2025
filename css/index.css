@@ -1,19 +1,29 @@
-html, body {
-    margin: 0;
-    padding: 0;
-
-    box-sizing: border-box;
-    
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: var(--text-dark);
+:root {
+    --bg-main: #C9942E;
+    --text-dark: #1E2528;
 }
 
+/* Сброс */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-dark);
+    background-color: var(--bg-main);
+}
+
+/* ВЕСЬ первый экран по центру */
 .MainContentHolder {
-    min-height: 100vh;              /* на всю высоту экрана */
+    min-height: 100vh;              /* на всю высоту окна */
     display: flex;
     flex-direction: column;
-    justify-content: center;        /* по вертикали по центру */
-    align-items: center;            /* по горизонтали по центру */
+    justify-content: center;        /* центр по вертикали */
+    align-items: center;            /* центр по горизонтали */
 }
 
 /* Заголовок */
@@ -31,13 +41,19 @@ html, body {
     font-size: 28px;
 }
 
-/* Блок с именами и почтами: 2 колонки */
+/* Имена и почты — две колонки */
 .MembersNames,
 .MembersMails {
     display: flex;
     justify-content: space-between;
-    width: 430px;       /* подбери под себя */
+    width: 430px;      /* можно подогнать */
     font-size: 16px;
+}
+
+/* убираем лишние внутренние отступы у <p> */
+.MembersNames p,
+.MembersMails p {
+    margin: 0;
 }
 
 .MembersMails {
