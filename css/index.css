@@ -107,21 +107,30 @@ html, body {
 }
 
 
-.contentBlock1 {
+.contentBlock1, .contentBlock3, .contentBlock5{
     display: flex;
     align-items: center;      
     justify-content: space-between;
     gap: 2rem;
-    margin-top: 6rem;
+    margin-top: 5rem;
 }
-.contentBlock1 .text1 {
+.contentBlock2, .contentBlock4, .contentBlock6{
+    flex-direction: row-reverse;
+
+    display: flex;
+    align-items: center;      
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 5rem;
+}
+.contentBlock1 .text1, .contentBlock2 .text2, .contentBlock3 .text3, .contentBlock4 .text4, .contentBlock5 .text5, .contentBlock6 .text6 {
     flex: 1;                  
 }
-.contentBlock1 .img1 {
+.contentBlock1 .img1, .contentBlock2 .img2, .contentBlock3 .img3, .contentBlock4 .img4, .contentBlock5 .img5, .contentBlock6 .img6 {
     flex: 0 0 30%;           
     max-width: 30%;
 }
-.contentBlock1 .img1 img {
+.contentBlock1 .img1 img, .contentBlock2 .img2 img, .contentBlock3 .img3 img, .contentBlock4 .img4 img, .contentBlock5 .img5 img, .contentBlock6 .img6 img {
     width: 100%;
     height: auto;
     display: block;
