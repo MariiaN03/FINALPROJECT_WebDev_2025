@@ -93,111 +93,29 @@ body {
 
 /*** CONTETNT SECTION ***/
     /** First part - logo & 1st text block **/
-.HolderContentLogoIMG{
-    margin-top: 3vh;
-}
-.contentLogoIMG{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-
-    border-radius: 50%;
-    width: 8vw;
-    height: auto;
-}
-.BlockText1 p{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-
-    width: 50%;
-
-    text-align: center;
-
-    font-size: 1.2rem;
-    color: rgb(0, 0, 0);
-}
-
-/** Second part - images&text*button **/
-
-/** .HotelImage1{
-    position: relative;
-
-    width: 40%;
-    height: auto;
-
-    margin-left: 2.5vw;
-    margin-top: 1vw;
-}
-.HotelDescription1{
-    position: absolute;
-
-    top: 70vw;
-    left: 43%;
-
-    text-align: center;
-    width: 60%;
-}
-.HotelImage2{
-    position: absolute;
-
-    width: 50%;
-    height: auto;
-
-    right: 2.5vw;
-    margin-top: 20vw;
-}
-.HotelDescription2{
-    position: absolute;
-
-    top: 95vw;
-    left: 2.5vw;
-
-    text-align: center;
-    width: 40%;
-}
-.ServicesButton{
-    position: absolute;
-
-    top: 112vw;
-    left: 15%;
-
-    width: 15vw;
-    height: 6vh;
-
-    background-color: #C9942E;
-    border-radius: 10px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.services-btn{
-    color: #F5F1EA;
-    font-size: 1.2vw;
-    text-decoration: none;
-} **/
 .TextANDPics {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); /* 2 колонки */
-    gap: 3rem 3rem;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas:
+        "img1 text1"
+        "text2 img2"
+        "btn  btn";
+    gap: 2.5rem 3rem;
     align-items: center;
 
     max-width: 1100px;
-    margin: 4rem auto 0;
-    padding: 0 2rem 4rem;
+    margin: 3rem auto 0;   /* уменьшила отступ сверху */
+    padding: 0 2rem 2.5rem; /* уменьшила нижний паддинг */
 }
 
-/* Сбрасываем абсолютное позиционирование (если вдруг осталось выше) */
-.HotelImage1,
-.HotelImage2,
-.HotelDescription1,
-.HotelDescription2,
-.ServicesButton {
-    position: static;
-}
+/* Привязываем элементы к областям грида */
+.HotelImage1      { grid-area: img1; }
+.HotelDescription1{ grid-area: text1; }
+.HotelDescription2{ grid-area: text2; }
+.HotelImage2      { grid-area: img2; }
+.ServicesButton   { grid-area: btn; }
 
-/* Картинки */
+/* базовые стили */
 .HotelImage1,
 .HotelImage2 {
     width: 100%;
@@ -206,7 +124,6 @@ body {
     border-radius: 10px;
 }
 
-/* Текст рядом с картинками */
 .HotelDescription1,
 .HotelDescription2 {
     font-size: 1.05rem;
@@ -214,9 +131,8 @@ body {
     text-align: left;
 }
 
-/* Кнопка внизу блока (на всю ширину сетки) */
+/* Кнопка на всю ширину сетки */
 .ServicesButton {
-    grid-column: 1 / -1;   /* занять обе колонки */
     margin: 1rem auto 0;
 
     width: 230px;
